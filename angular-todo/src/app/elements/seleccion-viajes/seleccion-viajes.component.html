@@ -1,0 +1,22 @@
+<app-video></app-video>
+<br><br>
+<p align="center">VIAJES A LA MEDIDA DE TUS SUEÑOS!</p>
+
+<div class="container" *ngFor='let index of viajes; let i = index; let even = even; let size = count'>
+  <span *ngIf="even">
+    <div class='pics_in_a_row'>
+      <div class='my_img rounded'>
+        <figure><img routerLink='programas/{{viajes[i].id}}' src={{viajes[i].foto}}>
+          <figcaption routerLink='programas/{{viajes[i].id}}'>USD:{{viajes[i].precio}}</figcaption>
+        </figure>
+      </div>
+      <div class='my_img rounded'>
+        <span *ngIf="i+1<size">
+          <figure><img routerLink='programas/{{viajes[i+1].id}}' src={{viajes[i+1].foto}}>
+            <figcaption routerLink='programas/{{viajes[i+1].id}}'>USD:{{viajes[i+1].precio}}</figcaption>
+          </figure>
+        </span>
+      </div>
+    </div>
+  </span>
+</div>
