@@ -1,0 +1,278 @@
+@charset "utf-8";
+/***********
+1. Fonts
+***********/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900');
+
+/*********************************
+2. Body and some general stuff
+*********************************/
+
+*
+{
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+body
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	background: #FFFFFF;
+	color: #131a2f;
+}
+
+ul
+{
+	list-style: none;
+	margin-bottom: 0px;
+}
+p
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	line-height: 2.14;
+	font-weight: 400;
+	color: #131a2f;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a
+{
+	display: inline;
+	position: relative;
+	color: inherit;
+	border-bottom: solid 1px #ffa07f;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+a, a:hover, a:visited, a:active, a:link
+{
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+p a:active
+{
+	position: relative;
+	color: #FF6347;
+}
+p a:hover
+{
+	color: #FFFFFF;
+	background: #ffa07f;
+}
+p a:hover::after
+{
+	opacity: 0.2;
+}
+::selection
+{
+	background: rgba(254, 60, 82, 0.8);
+	color: #FFFFFF;
+}
+h1{font-size: 48px;}
+h2{font-size: 40px;}
+h3{font-size: 24px;}
+h4{font-size: 18px;}
+h5{font-size: 14px;}
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Montserrat', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+.form-control
+{
+	color: #db5246;
+}
+section
+{
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+}
+.clear
+{
+	clear: both;
+}
+.clearfix::before, .clearfix::after
+{
+	content: "";
+	display: table;
+}
+.clearfix::after
+{
+	clear: both;
+}
+.clearfix
+{
+	zoom: 1;
+}
+.float_left
+{
+	float: left;
+}
+.float_right
+{
+	float: right;
+}
+.trans_200
+{
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.trans_300
+{
+	-webkit-transition: all 300ms ease;
+	-moz-transition: all 300ms ease;
+	-ms-transition: all 300ms ease;
+	-o-transition: all 300ms ease;
+	transition: all 300ms ease;
+}
+.trans_400
+{
+	-webkit-transition: all 400ms ease;
+	-moz-transition: all 400ms ease;
+	-ms-transition: all 400ms ease;
+	-o-transition: all 400ms ease;
+	transition: all 400ms ease;
+}
+.trans_500
+{
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+}
+.fill_height
+{
+	height: 100%;
+}
+.super_container
+{
+	width: 100%;
+	overflow: hidden;
+}
+.nopadding
+{
+	padding: 0px !important;
+}
+.parallax-window
+{
+    min-height: 400px;
+    background: transparent;
+}
+
+/*SERVICIOS QUE OFRECEMOS*/
+.services
+{
+	width: 100%;
+	background: #FFFFFF;
+	padding-bottom: 109px;
+}
+.icon_box_container
+{
+	margin-top: 50px;
+}
+.icon_box_image
+{
+	display: inline-block;
+	height: 62px;
+}
+.icon_box_image img
+{
+	max-height: 100%;
+}
+.svg path,
+.svg rect,
+.svg polygon
+{
+	fill: #afafaf;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.icon_box:hover .svg path,
+.icon_box:hover .svg rect,
+.icon_box:hover .svg polygon
+{
+	fill: #fe3c52;
+}
+.icon_box svg
+{
+	height: 62px;
+	width: auto;
+}
+.icon_box_title
+{
+	display: inline-block;
+	vertical-align: bottom;
+	font-size: 24px;
+	font-weight: 300;
+	color: #131a2f;
+	padding-left: 22px;
+}
+.icon_box_text
+{
+	margin-top: 14px;
+}
+.icon_box p:last-of-type
+{
+	margin-bottom: 0;
+}
+.icon_box_more
+{
+	display: inline-block;
+	position: relative;
+	font-size: 12px;
+	font-weight: 400;
+	color: #131a2f;
+	margin-top: 35px;
+	overflow: hidden;
+	-webkit-transition: all 200ms ease;
+	-moz-transition: all 200ms ease;
+	-ms-transition: all 200ms ease;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
+}
+.icon_box_more:hover
+{
+	color: #fe3c52;
+}
+.icon_box_more::before
+{
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	content: '';
+	background: #fe3c52;
+	-webkit-transition: all 0.5s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+    -moz-transition: all 0.5s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+    -ms-transition: all 0.5s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+    -o-transition: all 0.5s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+    transition: all 0.5s cubic-bezier(0.615, 0.19, 0.305, 0.91);
+}
+.icon_box_more:hover::before
+{
+	left: 100%;
+}
