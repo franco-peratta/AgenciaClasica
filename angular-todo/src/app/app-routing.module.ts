@@ -6,11 +6,13 @@ import { SeleccionViajesComponent } from './elements/seleccion-viajes/seleccion-
 import { FormComponent } from './elements/form/form.component';
 import { ContactComponent } from './elements/contact/contact.component';
 import { ViajeSeleccionadoComponent } from './elements/viaje-seleccionado/viaje-seleccionado.component';
+import { AboutComponent } from './elements/about/about.component';
 
 const routes: Routes = [
   { path: "", component: SeleccionViajesComponent },
-  { path: "contacto", component: ContactComponent},
-  { path: "programas/:id", component: ViajeSeleccionadoComponent}
+  { path: "contacto", component: ContactComponent },
+  { path: "programas/:id", component: ViajeSeleccionadoComponent },
+  { path: "about", component: AboutComponent }
 ];
 
 @NgModule({

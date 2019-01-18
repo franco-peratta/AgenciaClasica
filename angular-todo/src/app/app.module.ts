@@ -17,6 +17,7 @@ import { FormComponent } from './elements/form/form.component';
 import { SeleccionViajesComponent } from './elements/seleccion-viajes/seleccion-viajes.component';
 import { ContactComponent } from './elements/contact/contact.component';
 import { ViajeSeleccionadoComponent } from './elements/viaje-seleccionado/viaje-seleccionado.component';
+import { AboutComponent } from './elements/about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ViajeSeleccionadoComponent } from './elements/viaje-seleccionado/viaje-
     FormComponent,
     SeleccionViajesComponent,
     ContactComponent,
-    ViajeSeleccionadoComponent
+    ViajeSeleccionadoComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
