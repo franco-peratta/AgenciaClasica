@@ -2,38 +2,45 @@ import { Component, OnInit } from '@angular/core';
 import { ViajesService } from 'src/app/services/viajes-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { ViajesViewModel } from 'src/app/models/viajes-view-model';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { config } from 'rxjs';
 
 @Component({
   selector: 'app-viaje-seleccionado',
   templateUrl: './viaje-seleccionado.component.html',
-  styleUrls: ['./viaje-seleccionado.component.css']
+  styleUrls: ['./viaje-seleccionado.component.css'],
+  providers: [NgbCarouselConfig]
 })
 export class ViajeSeleccionadoComponent implements OnInit {
 
+  images = [];
   id: string;
-  viaje: ViajesViewModel = null;
+  viaje: ViajesViewModel;
 
-  constructor(private viajesService: ViajesService, private route: ActivatedRoute) { }
+  constructor(private viajesService: ViajesService, private route: ActivatedRoute, config: NgbCarouselConfig) {
+    config.interval = 10000;
+    config.wrap = false;
+    config.keyboard = false;
+    config.pauseOnHover = false;
+  }
 
   ngOnInit() {
-
     this.route.paramMap.subscribe(params => {
       this.id = params.get("id");
     });
-
     this.loadViaje();
-    //console.log(this.viajesService.getViaje(this.id));
   }
 
   loadViaje() {
     const data = this.viajesService.getViaje(this.id).subscribe(response => {
-      const data = response.data();
-      //ACA TENGO TODA LA DATA PERRO (en data)
+      const data = response.data();//aqui se guardan todos los atributos del viaje
 
       const viaje_obj: ViajesViewModel = {
         id: this.id,
+        nombre: data.nombre,
         destino: data.destino,
-        foto: data.foto,
+        portada: data.portada,
+        fotos: data.fotos,
         video: data.video,
         lastModifiedDate: data.lastModifiedDate.toDate(),
         duracion: data.duracion,
@@ -43,6 +50,11 @@ export class ViajeSeleccionadoComponent implements OnInit {
         itinerario: data.itinerario,
       };
       this.viaje = viaje_obj;
+
+      this.images.push(viaje_obj.portada);
+      for (let entry of viaje_obj.fotos) { //of me da el contenido dentro del indice (entry: fotos[i])
+        this.images.push(entry);
+      }
     })
   }
 

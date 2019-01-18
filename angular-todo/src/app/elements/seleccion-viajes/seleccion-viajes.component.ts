@@ -15,9 +15,9 @@ export class SeleccionViajesComponent implements OnInit {
 
   ngOnInit() {
     this.loadViajes();
-  } 
-  
-  loadViajes(){
+  }
+
+  loadViajes() {
     this.viajesService.getViajes().subscribe(response => {
       this.viajes = [];
       response.docs.forEach(value => {
@@ -25,8 +25,10 @@ export class SeleccionViajesComponent implements OnInit {
         const id = value.id;
         const viaje_obj: ViajesViewModel = {
           id: id,
+          nombre: data.nombre,
           destino: data.destino,
-          foto: data.foto,
+          portada: data.portada,
+          fotos: data.fotos,
           video: data.video,
           lastModifiedDate: data.lastModifiedDate.toDate(),
           duracion: data.duracion,
@@ -37,7 +39,6 @@ export class SeleccionViajesComponent implements OnInit {
         };
         this.viajes.push(viaje_obj);
       });
-    });  
-  }      
-
+    });
+  }
 }

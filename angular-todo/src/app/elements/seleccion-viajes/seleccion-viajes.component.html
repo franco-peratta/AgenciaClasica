@@ -6,13 +6,13 @@
   <span *ngIf="even">
     <div class='pics_in_a_row'>
       <div class='my_img rounded'>
-        <figure><img routerLink='programas/{{viajes[i].id}}' src={{viajes[i].foto}}>
+        <figure><img routerLink='programas/{{viajes[i].id}}' src={{viajes[i].portada}}>
           <figcaption routerLink='programas/{{viajes[i].id}}'>USD:{{viajes[i].precio}}</figcaption>
         </figure>
       </div>
       <div class='my_img rounded'>
         <span *ngIf="i+1<size">
-          <figure><img routerLink='programas/{{viajes[i+1].id}}' src={{viajes[i+1].foto}}>
+          <figure><img routerLink='programas/{{viajes[i+1].id}}' src={{viajes[i+1].portada}}>
             <figcaption routerLink='programas/{{viajes[i+1].id}}'>USD:{{viajes[i+1].precio}}</figcaption>
           </figure>
         </span>

@@ -2,6 +2,10 @@
   <!--AGREGAR NGIF por si no ponen nada en los campos-->
   <form [formGroup]="formdb" (ngSubmit)="saveViaje()">
     <div class="form-group">
+      Nombre del programa
+      <br>
+      <input type="text" name="nombre" class="form-control" formControlName="nombre">
+      <br>
       Destino
       <br>
       <input type="text" name="destino" class="form-control" formControlName="destino">
@@ -23,11 +27,23 @@
       Itinerario
       <br>
       <textarea id="itinerario" class="form-control" formControlName="itinerario"></textarea>
-      <br>  
+      <br>
       Portada
-      <input type="text" name="portada" class="form-control" formControlName="foto"><br><br>
-      <button class="btn btn-primary" (click)="saveViaje()" [disabled]="formdb.invalid">Save</button>
-      
+      <input type="text" name="portada" class="form-control" formControlName="portada">
+      <br>
+      Foto1
+      <br>
+      <input type="text" name="foto1" class="form-control" formControlName="foto1">
+      <br>
+      Foto2
+      <br>
+      <input type="text" name="foto2" class="form-control" formControlName="foto2">
+      <br>
+      Foto3
+      <br>
+      <input type="text" name="foto3" class="form-control" formControlName="foto3">
+      <br>
+      <button class="btn btn-primary" [disabled]="formdb.invalid">Save</button>
     </div>
   </form>
 </div>

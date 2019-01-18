@@ -1,6 +1,8 @@
 export interface Viajes {
-    destino: string; 
-    foto: string;
+    nombre: string;
+    destino: string;
+    portada: string;
+    fotos: string[];
     video: string;
     duracion: string;
     precio: string;
