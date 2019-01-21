@@ -58,4 +58,27 @@ export class ViajeSeleccionadoComponent implements OnInit {
     })
   }
 
+  toggleItinerario() {
+    let itinerario = document.getElementById("itinerario");
+    if (itinerario.className.indexOf("panel-invi") >= 0) {
+      itinerario.classList.remove("panel-invi");
+      itinerario.classList.add("panel-visible");
+    }
+    else {
+      itinerario.classList.remove("panel-visible");
+      itinerario.classList.add("panel-invi");
+    }
+  }
+
+  toggleObs() {
+    let obs = document.getElementById("observaciones");
+    if (obs.className.indexOf("panel-invi") >= 0) {
+      obs.classList.remove("panel-invi");
+      obs.classList.add("panel-visible");
+    }
+    else {
+      obs.classList.remove("panel-visible");
+      obs.classList.add("panel-invi");
+    }
+  }
 }
