@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: "", component: SeleccionViajesComponent },
   { path: "contacto", component: ContactComponent },
   { path: "programas/:id", component: ViajeSeleccionadoComponent },
-  { path: "about", component: AboutComponent }
+  { path: "about", component: AboutComponent },
+  { path: "form", component: FormComponent },
 ];
 
 @NgModule({

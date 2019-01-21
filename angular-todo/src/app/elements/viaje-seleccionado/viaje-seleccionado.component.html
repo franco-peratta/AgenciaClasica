@@ -4,65 +4,128 @@ tambien le puedo agregar el simbolo ? a la derecha de viaje -> {{viaje?.nombre}}
 es un nullcheck, como esta null no carga h2, luego angular asincronicamente lo carga cuando es not null
 https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-undefined-in-thing-title-in-appcomponent
 -->
-<h2 *ngIf="viaje" align="center" style="margin-top: 30px">{{viaje.nombre}}</h2>
-
-<hr>
-<div class="inner">
-    <ngb-carousel>
-        <ng-template ngbSlide *ngFor='let index of images; let i = index; let size = count'>
-            <img src={{images[i]}} width='100%' height="500px" alt="Random slide">
-            <div class="carousel-caption">
-                <h3></h3>
-                <p></p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-7">
+            <h2 *ngIf="viaje" align="center" style="margin-top: 30px">{{viaje.nombre}}</h2>
+            <hr>
+            <div>
+                <ngb-carousel>
+                    <ng-template ngbSlide *ngFor='let index of images; let i = index; let size = count'>
+                        <img src={{images[i]}} width='100%' height="500px" alt="Random slide">
+                        <div class="carousel-caption">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </ng-template>
+                </ngb-carousel>
             </div>
-        </ng-template>
-    </ngb-carousel>
-</div>
 
-<hr>
-<div *ngIf="viaje" class="inner border" style="background-color:rgb(247, 242, 242)">
-    <p>Duracion: {{viaje.duracion}}</p>
-    <p>Ubicacion: {{viaje.destino}}</p>
-    <p>Precio: USD{{viaje.precio}}</p>
-</div>
+            <hr>
+            <div *ngIf="viaje" class="border" style="background-color:rgb(247, 242, 242)">
+                <p>Duracion: {{viaje.duracion}}</p>
+                <p>Ubicacion: {{viaje.destino}}</p>
+                <p>Precio: USD{{viaje.precio}}</p>
+            </div>
 
-<hr>
-<div class="quote inner">
-    <!--https://1stwebdesigner.com/css-snippets-blockquotes/-->
-    <blockquote>
-        {{viaje?.descripcion}}
-    </blockquote>
-</div>
+            <hr>
+            <div class="quote">
+                <!--https://1stwebdesigner.com/css-snippets-blockquotes/-->
+                <blockquote>
+                    {{viaje?.descripcion}}
+                </blockquote>
+            </div>
 
-<hr>
-<div class="inner">
-    <h1 align="center">Itinerario</h1>
-    <br>
-    <button class="accordion border" (click)=toggleItinerario()>Itinerario</button>
-    <div class="panel-invi border" id="itinerario">
-        <p>{{viaje?.itinerario}}</p>
+            <hr>
+            <div>
+                <h1 align="center">Itinerario</h1>
+                <br>
+                <button class="accordion border" (click)=toggleItinerario()>Itinerario</button>
+                <div class="panel-invi border" id="itinerario">
+                    <p>{{viaje?.itinerario}}</p>
+                </div>
+                <br>
+                <button class="accordion" (click)=toggleObs()>Observaciones</button>
+                <div class="panel-invi border" id="observaciones">
+                    <p>{{viaje?.observaciones}}</p>
+                </div>
+            </div>
+
+            <hr>
+
+            <div align="center" id="share-buttons">
+                <!-- Facebook -->
+                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                </a>
+                <!-- Twitter -->
+                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
+                    target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                </a>
+                <!-- Google+ -->
+                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-4" style="text-align:center;margin-top:30px">
+            <h2>Ofertas mas recientes</h2>
+            <hr>
+            <div class="oferta">                
+                <!--OFERTA 1-->
+                <div class="container py-3">
+                    <div class="card">
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"
+                                    class="w-100">
+                            </div>
+                            <div class="col-md-8 px-3">
+                                <div class="card-block px-3" style="padding-top:30px">
+                                    <h6 class="card-title">Nombre del programa</h6>
+                                    <p class="card-text">USD: $9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--OFERTA 2-->
+                <div class="container py-3">
+                    <div class="card">
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"
+                                    class="w-100">
+                            </div>
+                            <div class="col-md-8 px-3">
+                                <div class="card-block px-3" style="padding-top:30px">
+                                    <h6 class="card-title">Nombre del programa</h6>
+                                    <p class="card-text">USD: $9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--OFERTA 3-->
+                <div class="container py-3">
+                    <div class="card">
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"
+                                    class="w-100">
+                            </div>
+                            <div class="col-md-8 px-3">
+                                <div class="card-block px-3" style="padding-top:30px">
+                                    <h6 class="card-title">Nombre del programa</h6>
+                                    <p class="card-text">USD: $9999</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <br>
-    <button class="accordion" (click)=toggleObs()>Observaciones</button>
-    <div class="panel-invi border" id="observaciones">
-        <p>{{viaje?.observaciones}}</p>
-    </div>
-</div>
-
-<hr>
-
-<div class="inner" align="center" id="share-buttons">
-    <!-- Facebook -->
-    <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
-        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-    </a>
-    <!-- Twitter -->
-    <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
-        target="_blank">
-        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-    </a>
-    <!-- Google+ -->
-    <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
-        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-    </a>
 </div>

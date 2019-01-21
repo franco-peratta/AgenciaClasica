@@ -61,11 +61,12 @@ export class FormComponent implements OnInit {
       observaciones: this.formdb.value.obs,
       itinerario: this.formdb.value.itinerario,
       createdDate: new Date(),
-      lastModifiedDate: new Date()
+      lastModifiedDate: new Date(),
+      destacado: this.formdb.value.destacado,
     }
 
     this.viajesService.saveViajes(viaje)
       .then(() => alert("Viaje guardado con exito!"))
-      .catch(err => console.error(err));
+      .catch(err => alert(err));
   }
 }

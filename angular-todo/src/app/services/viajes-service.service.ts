@@ -16,11 +16,12 @@ export class ViajesService {
   getViajes(): Observable<firebase.firestore.QuerySnapshot> {
     return this.db.collection<Viajes>(this.ViajesCollectionName, ref => ref.orderBy('lastModifiedDate', 'desc')).get();
   }
-
-  public getViaje(id: string): Observable<firebase.firestore.DocumentSnapshot> {
+  getViaje(id: string): Observable<firebase.firestore.DocumentSnapshot> {
     return this.db.collection<Viajes>(this.ViajesCollectionName).doc(id).get();
   }
-
+  getViajesDestacados(): Observable<firebase.firestore.QuerySnapshot> {
+    return this.db.collection<Viajes>(this.ViajesCollectionName, ref => ref.where('destacado', '==', true)).get();
+  }
   saveViajes(Viajes: Viajes): Promise<DocumentReference> {
     return this.db.collection(this.ViajesCollectionName).add(Viajes);
   }

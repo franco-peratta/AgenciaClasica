@@ -1,9 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans|Ubuntu:300,400,700);
 
 .inner {
-    width: 50%;
-    margin: 0 auto;
-    margin-top: 30px
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 30px
 }
 
 body {
@@ -31,7 +31,9 @@ blockquote {
   padding: 1.5em 0 0.5em;
   margin: 1.5em 0;
   position: relative;
+  text-align: center;
 }
+
 blockquote:before {
   content: '\201C';
   position: absolute;
@@ -78,9 +80,12 @@ blockquote:before {
   }
 
   #share-buttons img {
-    width: 35px;
     padding: 5px;
     border: 0;
     box-shadow: 0;
     display: inline;
+}
+
+.oferta{
+  cursor: pointer;
 }

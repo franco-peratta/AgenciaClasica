@@ -11,4 +11,5 @@ export interface Viajes {
     itinerario: string;
     createdDate: Date;
     lastModifiedDate: Date;
+    destacado: boolean;
 }

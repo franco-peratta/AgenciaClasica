@@ -11,4 +11,5 @@ export interface ViajesViewModel {
     observaciones: string;
     itinerario: string;
     lastModifiedDate: Date;
+    destacado: boolean;
 } 

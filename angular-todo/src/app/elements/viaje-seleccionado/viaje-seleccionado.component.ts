@@ -48,6 +48,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
         descripcion: data.descripcion,
         observaciones: data.observaciones,
         itinerario: data.itinerario,
+        destacado: data.destacado,
       };
       this.viaje = viaje_obj;
 

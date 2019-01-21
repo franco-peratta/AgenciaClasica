@@ -18,7 +18,7 @@ export class SeleccionViajesComponent implements OnInit {
   }
 
   loadViajes() {
-    this.viajesService.getViajes().subscribe(response => {
+    this.viajesService.getViajesDestacados().subscribe(response => {
       this.viajes = [];
       response.docs.forEach(value => {
         const data = value.data();
@@ -36,6 +36,7 @@ export class SeleccionViajesComponent implements OnInit {
           descripcion: data.descripcion,
           observaciones: data.observaciones,
           itinerario: data.itinerario,
+          destacado: data.destacado,
         };
         this.viajes.push(viaje_obj);
       });
