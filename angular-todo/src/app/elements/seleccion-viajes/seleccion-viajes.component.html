@@ -8,13 +8,23 @@
     <div class='pics_in_a_row'>
       <div class='my_img rounded hover13'>
         <figure><img routerLink='programas/{{viajes[i].id}}' src={{viajes[i].portada}}>
-          <figcaption routerLink='programas/{{viajes[i].id}}'>USD:{{viajes[i].precio}}</figcaption>
+          <figcaption routerLink='programas/{{viajes[i+1].id}}'>
+            <div style="text-align: center"> 
+                <p>{{viajes[i].nombre}}</p>
+                <p>USD:{{viajes[i].precio}}</p>
+              </div>
+          </figcaption>
         </figure>
       </div>
       <div class='my_img rounded hover13'>
         <span *ngIf="i+1<size">
           <figure><img routerLink='programas/{{viajes[i+1].id}}' src={{viajes[i+1].portada}}>
-            <figcaption routerLink='programas/{{viajes[i+1].id}}'>USD:{{viajes[i+1].precio}}</figcaption>
+            <figcaption routerLink='programas/{{viajes[i+1].id}}'>
+              <div style="text-align: center"> 
+                <p>{{viajes[i+1].nombre}}</p>
+                <p>USD:{{viajes[i+1].precio}}</p>
+              </div>
+            </figcaption>
           </figure>
         </span>
       </div>

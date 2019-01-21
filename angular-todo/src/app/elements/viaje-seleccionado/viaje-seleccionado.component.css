@@ -88,4 +88,5 @@ blockquote:before {
 
 .oferta{
   cursor: pointer;
+  margin-top: 15px;
 }

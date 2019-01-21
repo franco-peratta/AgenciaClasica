@@ -14,6 +14,7 @@ import { config } from 'rxjs';
 export class ViajeSeleccionadoComponent implements OnInit {
 
   images = [];
+  ofertas = [];
   id: string;
   viaje: ViajesViewModel;
 
@@ -29,10 +30,11 @@ export class ViajeSeleccionadoComponent implements OnInit {
       this.id = params.get("id");
     });
     this.loadViaje();
+    this.loadOfertas();
   }
 
   loadViaje() {
-    const data = this.viajesService.getViaje(this.id).subscribe(response => {
+    this.viajesService.getViaje(this.id).subscribe(response => {
       const data = response.data();//aqui se guardan todos los atributos del viaje
 
       const viaje_obj: ViajesViewModel = {
@@ -63,7 +65,9 @@ export class ViajeSeleccionadoComponent implements OnInit {
     let itinerario = document.getElementById("itinerario");
     if (itinerario.className.indexOf("panel-invi") >= 0) {
       itinerario.classList.remove("panel-invi");
-      itinerario.classList.add("panel-visible");
+      itinerario.classList.add("panel-visible");      
+      let text = document.getElementById("itinerario");
+      text.innerHTML = this.viaje.itinerario;
     }
     else {
       itinerario.classList.remove("panel-visible");
@@ -76,10 +80,37 @@ export class ViajeSeleccionadoComponent implements OnInit {
     if (obs.className.indexOf("panel-invi") >= 0) {
       obs.classList.remove("panel-invi");
       obs.classList.add("panel-visible");
+      let text = document.getElementById("observaciones");
+      text.innerHTML = this.viaje.observaciones;
     }
     else {
       obs.classList.remove("panel-visible");
       obs.classList.add("panel-invi");
     }
+  }
+
+  loadOfertas() {
+    this.viajesService.getViajesUltimoMomento().subscribe(res => {
+      res.docs.forEach(value => {
+        const data = value.data();
+        const id = value.id;
+        const viaje_obj: ViajesViewModel = {
+          id: id,
+          nombre: data.nombre,
+          destino: data.destino,
+          portada: data.portada,
+          fotos: data.fotos,
+          video: data.video,
+          lastModifiedDate: data.lastModifiedDate.toDate(),
+          duracion: data.duracion,
+          precio: data.precio,
+          descripcion: data.descripcion,
+          observaciones: data.observaciones,
+          itinerario: data.itinerario,
+          destacado: data.destacado,
+        };
+        this.ofertas.push(viaje_obj);
+      });
+    });
   }
 }

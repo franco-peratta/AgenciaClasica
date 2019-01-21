@@ -22,6 +22,10 @@ export class ViajesService {
   getViajesDestacados(): Observable<firebase.firestore.QuerySnapshot> {
     return this.db.collection<Viajes>(this.ViajesCollectionName, ref => ref.where('destacado', '==', true)).get();
   }
+  getViajesUltimoMomento() {
+    let array: Observable<firebase.firestore.QuerySnapshot> = this.db.collection<Viajes>(this.ViajesCollectionName, ref => ref.limit(3)).get();
+    return array;
+  }
   saveViajes(Viajes: Viajes): Promise<DocumentReference> {
     return this.db.collection(this.ViajesCollectionName).add(Viajes);
   }

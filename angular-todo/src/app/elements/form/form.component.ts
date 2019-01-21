@@ -29,7 +29,8 @@ export class FormComponent implements OnInit {
       portada: ['', Validators.required],
       foto1: ['', Validators.required],
       foto2: ['', Validators.required],
-      foto3: ['', Validators.required]
+      foto3: ['', Validators.required],
+      destacado: ['', Validators.required]
     });
   }
 
@@ -62,8 +63,10 @@ export class FormComponent implements OnInit {
       itinerario: this.formdb.value.itinerario,
       createdDate: new Date(),
       lastModifiedDate: new Date(),
-      destacado: this.formdb.value.destacado,
+      destacado: true,
     }
+
+    console.log(this.formdb.value.destacado);
 
     this.viajesService.saveViajes(viaje)
       .then(() => alert("Viaje guardado con exito!"))

@@ -12,8 +12,8 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
             <hr>
             <div>
                 <ngb-carousel>
-                    <ng-template ngbSlide *ngFor='let index of images; let i = index; let size = count'>
-                        <img src={{images[i]}} width='100%' height="500px" alt="Random slide">
+                    <ng-template ngbSlide *ngFor='let index of images; let size = count'>
+                        <img src={{index}} width='100%' height="500px" alt="Random slide">
                         <div class="carousel-caption">
                             <h3></h3>
                             <p></p>
@@ -24,9 +24,9 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
 
             <hr>
             <div *ngIf="viaje" class="border" style="background-color:rgb(247, 242, 242)">
-                <p>Duracion: {{viaje.duracion}}</p>
-                <p>Ubicacion: {{viaje.destino}}</p>
-                <p>Precio: USD{{viaje.precio}}</p>
+                <p><b>Duracion:</b> {{viaje.duracion}}</p>
+                <p><b>Ubicacion:</b>: {{viaje.destino}}</p>
+                <p><b>Precio:</b>: USD{{viaje.precio}}</p>
             </div>
 
             <hr>
@@ -39,16 +39,14 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
 
             <hr>
             <div>
-                <h1 align="center">Itinerario</h1>
+                <h1 align="center">Detalles</h1>
                 <br>
-                <button class="accordion border" (click)=toggleItinerario()>Itinerario</button>
+                <button class="accordion border" (click)=toggleItinerario()><b>Itinerario</b></button>
                 <div class="panel-invi border" id="itinerario">
-                    <p>{{viaje?.itinerario}}</p>
                 </div>
                 <br>
-                <button class="accordion" (click)=toggleObs()>Observaciones</button>
+                <button class="accordion" (click)=toggleObs()><b>Observaciones</b></button>
                 <div class="panel-invi border" id="observaciones">
-                    <p>{{viaje?.observaciones}}</p>
                 </div>
             </div>
 
@@ -73,55 +71,16 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
         <div class="col-sm-4" style="text-align:center;margin-top:30px">
             <h2>Ofertas mas recientes</h2>
             <hr>
-            <div class="oferta">                
-                <!--OFERTA 1-->
-                <div class="container py-3">
-                    <div class="card">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"
-                                    class="w-100">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block px-3" style="padding-top:30px">
-                                    <h6 class="card-title">Nombre del programa</h6>
-                                    <p class="card-text">USD: $9999</p>
-                                </div>
-                            </div>
-                        </div>
+            <!--OFERTAS-->
+            <div class="container py-3 oferta border" *ngFor='let index of ofertas; let i = index'>
+                <div routerLink='../../programas/{{index.id}}' class="row ">
+                    <div class="col-md-4">
+                        <img src={{index.portada}} class="w-100 border">
                     </div>
-                </div>
-                <!--OFERTA 2-->
-                <div class="container py-3">
-                    <div class="card">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"
-                                    class="w-100">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block px-3" style="padding-top:30px">
-                                    <h6 class="card-title">Nombre del programa</h6>
-                                    <p class="card-text">USD: $9999</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--OFERTA 3-->
-                <div class="container py-3">
-                    <div class="card">
-                        <div class="row ">
-                            <div class="col-md-4">
-                                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400"
-                                    class="w-100">
-                            </div>
-                            <div class="col-md-8 px-3">
-                                <div class="card-block px-3" style="padding-top:30px">
-                                    <h6 class="card-title">Nombre del programa</h6>
-                                    <p class="card-text">USD: $9999</p>
-                                </div>
-                            </div>
+                    <div class="col-md-8 px-3">
+                        <div class="card-block px-3">
+                            <h6 class="card-title">{{index.nombre}}</h6>
+                            <p class="card-text">Desde: USD:${{index.precio}}</p>
                         </div>
                     </div>
                 </div>
