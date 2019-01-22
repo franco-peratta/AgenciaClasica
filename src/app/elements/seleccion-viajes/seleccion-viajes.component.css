@@ -87,6 +87,14 @@ figcaption{
 	padding-bottom: 1px;
 }
 
+.btn {
+	color: black;
+}
+.btn-primary {
+	color: black;
+}
+
+
 /*https://codepen.io/nxworld/pen/ZYNOBZ*/
 /* Gray Scale */
 .hover08 figure img {

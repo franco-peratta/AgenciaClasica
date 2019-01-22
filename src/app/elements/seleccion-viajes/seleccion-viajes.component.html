@@ -14,9 +14,11 @@
             </div>
           </figcaption>
           <div class="precio">
+            <button routerLink='programas/{{viajes[i].id}}' type="button" class="btn btn-primary" style="float: right; margin-top:8px">
+              Ampliar <i class="fa fa-shopping-cart"></i>
+            </button>
             <i class="fa fa-money" style="margin-top:10px"></i> Precio: <br>
             USD:{{viajes[i].precio}}
-            <a type="button" class="btn btn-primary" style="float: right;">Ampliar <i class="fa fa-shopping-cart"></i></a>
           </div>
         </figure>
       </div>
@@ -28,9 +30,11 @@
             </div>
           </figcaption>
           <div class="precio">
+            <button routerLink='programas/{{viajes[i+1].id}}' type="button" class="btn btn-primary" style="float: right; margin-top:8px">
+              Ampliar <i class="fa fa-shopping-cart"></i>
+            </button>
             <i class="fa fa-money" style="margin-top:10px"></i> Precio: <br>
             USD:{{viajes[i+1].precio}}
-            <a type="button" class="btn btn-primary" style="float: right;">Ampliar <i class="fa fa-shopping-cart"></i></a>
           </div>
         </figure>
       </div>
