@@ -68,11 +68,11 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                 </a>
             </div>
         </div>
-        <div class="col-sm-4" style="text-align:center;margin-top:30px">
+        <div class="col-sm-4" style="text-align:center;margin-top:30px;">
             <h2>Ofertas mas recientes</h2>
             <hr>
             <!--OFERTAS-->
-            <div class="container py-3 oferta border" *ngFor='let index of ofertas; let i = index'>
+            <div class="container py-3 oferta border" *ngFor='let index of ofertas; let i = index' (click)=reloadWithDifferentId()>
                 <div routerLink='../../programas/{{index.id}}' class="row ">
                     <div class="col-md-4">
                         <img src={{index.portada}} class="w-100 border">

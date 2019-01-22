@@ -65,7 +65,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
     let itinerario = document.getElementById("itinerario");
     if (itinerario.className.indexOf("panel-invi") >= 0) {
       itinerario.classList.remove("panel-invi");
-      itinerario.classList.add("panel-visible");      
+      itinerario.classList.add("panel-visible");
       let text = document.getElementById("itinerario");
       text.innerHTML = this.viaje.itinerario;
     }
@@ -112,5 +112,10 @@ export class ViajeSeleccionadoComponent implements OnInit {
         this.ofertas.push(viaje_obj);
       });
     });
+  }
+
+  //ARREGLAR ESTA BARBARIDAD
+  reloadWithDifferentId() {
+    window.location.reload();
   }
 }

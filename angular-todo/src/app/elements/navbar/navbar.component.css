@@ -16,7 +16,6 @@ nav .navbar-nav li a{
 
 .navbar .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
     background-color: rgb(124, 184, 233);
-    color: rgb(128, 16, 34);
 }
 
 .navbar-icon-top .navbar-nav .nav-link > .fa {

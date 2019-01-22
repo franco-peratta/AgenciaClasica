@@ -19,15 +19,15 @@ img:hover {
 	box-sizing: border-box;
 }
   
-body {
-	background: rebeccapurple;
-}
-  
 .container {
 	background: white;
 	margin: 0 auto;
 	padding: 0%;
 	width: 75%;
+}
+
+.precio{
+	color: #292828b2;
 }
   
 h1 {
@@ -45,7 +45,11 @@ h2 {
 	font-style: italic;
 	color: #666;
 }
-  
+
+p {
+	color: black;
+}
+
 p, li {
 	line-height: 1.5
 }
@@ -76,9 +80,11 @@ code {
 }  
 
 figcaption{
-	background-color:#5349e7;
+	background-color:#3dd6d0;
 	color: white;
 	cursor: pointer;
+	padding-top: 8px;
+	padding-bottom: 1px;
 }
 
 /*https://codepen.io/nxworld/pen/ZYNOBZ*/

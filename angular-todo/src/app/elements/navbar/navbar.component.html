@@ -1,8 +1,11 @@
-<div class="bordered">
+<!--Logo de la empresa-->
+<div class="border container-fluid">
   <a class="navbar-brand" routerLink="">
-    <img src="https://i.imgur.com/5DIWZM8.png" height="80px" width="250px" alt="LOGO">
+    <img [src]="'assets/media/logo.png'" height="80px" width="250px" alt="LOGO">
   </a>
 </div>
+
+<!--Navbar-->
 <nav class="navbar navbar-icon-top navbar-expand-lg justify-content-md-center">
   <div>
     <ul class="navbar-nav text-center border">
@@ -14,7 +17,7 @@
         </a>
       </li>
       <li class="nav-item active">
-        <a routerLink="" class="nav-link">
+        <a routerLink="programas" class="nav-link">
           <i class="fa fa-plane"></i>
           Programas
           <span class="sr-only">(current)</span>

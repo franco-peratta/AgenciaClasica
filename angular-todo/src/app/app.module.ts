@@ -11,13 +11,17 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatTableModule } from '@angular/material';
 
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './elements/form/form.component';
 import { SeleccionViajesComponent } from './elements/seleccion-viajes/seleccion-viajes.component';
 import { ContactComponent } from './elements/contact/contact.component';
 import { ViajeSeleccionadoComponent } from './elements/viaje-seleccionado/viaje-seleccionado.component';
 import { AboutComponent } from './elements/about/about.component';
+
+import { from } from 'rxjs';
+import { ProgramasComponent } from './elements/programas/programas.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,8 @@ import { AboutComponent } from './elements/about/about.component';
     SeleccionViajesComponent,
     ContactComponent,
     ViajeSeleccionadoComponent,
-    AboutComponent
+    AboutComponent,
+    ProgramasComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,8 @@ import { AboutComponent } from './elements/about/about.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
