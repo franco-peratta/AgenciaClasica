@@ -1,6 +1,5 @@
 #spin { 
   font-weight: bold;
-  text-decoration: underline;
   color: white;
   font-family: 'Nobile', sans-serif;
   font-size: 7vw;
@@ -18,14 +17,6 @@
   100% { content:"viajes"; }
 }
 
-.video-container {
-  position: relative;
-}
-video {
-  height: auto;
-  vertical-align: middle;
-  width: 100%;
-}
 .overlay-desc {
   background: rgba(0,0,0,0);
   position: absolute;
@@ -39,4 +30,18 @@ h1 {
   font-family: 'Nobile', sans-serif;
   font-size: 7vw;
   text-align: center;
+}
+
+#video-bg {
+  position: relative;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  background-size: cover;
+}
+.video-container {
+  width: 100%;
+  max-height: 700px; /*altura del video*/
+  overflow: hidden;
+  position: relative;
 }

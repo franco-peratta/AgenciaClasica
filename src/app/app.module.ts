@@ -11,7 +11,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatTableModule } from '@angular/material';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './elements/form/form.component';
@@ -22,6 +21,7 @@ import { AboutComponent } from './elements/about/about.component';
 
 import { from } from 'rxjs';
 import { ProgramasComponent } from './elements/programas/programas.component';
+import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { ProgramasComponent } from './elements/programas/programas.component';
     ViajeSeleccionadoComponent,
     AboutComponent,
     ProgramasComponent,
+    CircuitosEuropeosComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,6 @@ import { ProgramasComponent } from './elements/programas/programas.component';
     AngularFirestoreModule,
     NgbModule,
     ReactiveFormsModule,
-    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { ContactComponent } from './elements/contact/contact.component';
 import { ViajeSeleccionadoComponent } from './elements/viaje-seleccionado/viaje-seleccionado.component';
 import { AboutComponent } from './elements/about/about.component';
 import { ProgramasComponent } from './elements/programas/programas.component';
+import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 
 const routes: Routes = [
   { path: "", component: SeleccionViajesComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: "programas/:id", component: ViajeSeleccionadoComponent },
   { path: "about", component: AboutComponent },
   { path: "form", component: FormComponent },
+  { path: "circuitos_europeos", component: CircuitosEuropeosComponent },
 ];
 
 @NgModule({

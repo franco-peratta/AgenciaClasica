@@ -27,7 +27,7 @@ img:hover {
 }
 
 .precio{
-	color: #292828b2;
+	color: #110c0cb2;
 }
   
 h1 {
@@ -47,7 +47,7 @@ h2 {
 }
 
 p {
-	color: black;
+	color: white;
 }
 
 p, li {
@@ -83,15 +83,14 @@ figcaption{
 	background-color:#3dd6d0;
 	color: white;
 	cursor: pointer;
-	padding-top: 8px;
-	padding-bottom: 1px;
+	font-size: 16px;
 }
 
 .btn {
 	color: black;
 }
 .btn-primary {
-	color: black;
+	color: rgb(255, 255, 255);
 }
 
 
