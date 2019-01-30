@@ -28,3 +28,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Instructions
 First clone the repository. Then open a terminal in the project's path and run "npm install". After that you are able to start working.
+
+## Hosting
+I'm using firebase as a free hosting service. URL: "https://agenciaclasica.firebaseapp.com/"
