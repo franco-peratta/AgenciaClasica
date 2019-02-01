@@ -1,0 +1,16 @@
+<div class="container-fluid">
+    <div class="card" *ngFor='let index of viajes'>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-25">
+            </div>
+            <div class="col-md-8">
+                <div class="card-block">
+                    <h4 class="card-title">{{index?.nombre}}</h4>
+                    <p class="card-text">{{index?.descripcion}}</p>
+                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

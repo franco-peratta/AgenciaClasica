@@ -23,6 +23,8 @@ import { from } from 'rxjs';
 import { ProgramasComponent } from './elements/programas/programas.component';
 import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 
+import { MatTableDataSource, MatTableModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,7 @@ import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circui
     ViajeSeleccionadoComponent,
     AboutComponent,
     ProgramasComponent,
-    CircuitosEuropeosComponent,
+    CircuitosEuropeosComponent,    
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circui
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgbModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,    
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
