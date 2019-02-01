@@ -24,6 +24,7 @@ import { ProgramasComponent } from './elements/programas/programas.component';
 import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 
 import { MatTableDataSource, MatTableModule } from '@angular/material';
+import { SearchPipe } from './elements/programas/search.pipe';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatTableDataSource, MatTableModule } from '@angular/material';
     ViajeSeleccionadoComponent,
     AboutComponent,
     ProgramasComponent,
-    CircuitosEuropeosComponent,    
+    CircuitosEuropeosComponent,
+    SearchPipe,    
   ],
   imports: [
     BrowserModule,

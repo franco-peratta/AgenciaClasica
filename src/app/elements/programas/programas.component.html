@@ -1,16 +1,31 @@
 <div class="container-fluid">
-    <div class="card" *ngFor='let index of viajes'>
+    <h3>Programas</h3>
+    <form class="form-horizontal" [formGroup]="filter" novalidate>
         <div class="row">
-            <div class="col-md-4">
-                <img src="https://placeholdit.imgix.net/~text?txtsize=38&txt=400%C3%97400&w=400&h=400" class="w-25">
-            </div>
-            <div class="col-md-8">
-                <div class="card-block">
-                    <h4 class="card-title">{{index?.nombre}}</h4>
-                    <p class="card-text">{{index?.descripcion}}</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                </div>
+            <div class="col-sm-11">
+                <input class="form-control" formControlName="inputText" placeholder="Ingrese un valor para filtar la lista">
             </div>
         </div>
-    </div>
+    </form>
+    <br><br>
+    <table class="table table-sm" *ngIf="viajes">
+        <tr>
+            <th>Nombre</th>
+            <th>Destino</th>
+            <th>Duracion</th>
+            <th>Precio</th>
+            <th>Destacado</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let index of viajes | search : filter.get('inputText').value">
+            <td>{{index.nombre}}</td>
+            <td>{{index.destino}}</td>
+            <td>{{index.duracion}}</td>
+            <td>{{index.precio}}</td>
+            <td>{{index.destacado}}</td>
+            <td></td>
+            <td class="text-right"><a class="btn-sm btn-info" href="">Select</a></td>
+        </tr>
+        <tr></tr>
+    </table>
 </div>

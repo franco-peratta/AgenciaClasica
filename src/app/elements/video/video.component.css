@@ -41,7 +41,7 @@ h1 {
 }
 .video-container {
   width: 100%;
-  max-height: 700px; /*altura del video*/
+  max-height: 800px; /*altura del video*/
   overflow: hidden;
   position: relative;
 }

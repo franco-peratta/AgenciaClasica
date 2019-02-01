@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ViajesService } from 'src/app/services/viajes-service.service';
 import { ViajesViewModel } from 'src/app/models/viajes-view-model';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-programas',
@@ -13,8 +14,12 @@ export class ProgramasComponent implements OnInit {
   constructor(private viajesService: ViajesService) { }
 
   viajes: ViajesViewModel[] = [];
+  private filter: FormGroup;
 
   ngOnInit() {
+    this.filter = new FormGroup({
+      inputText: new FormControl('')
+    });
     this.loadViajes();
   }
 
