@@ -23,7 +23,7 @@
         </figure>
       </div>
       <div class='my_img rounded hover13'>
-        <figure><img routerLink='programas/{{viajes[i+1].id}}' src={{viajes[i+1].portada}}>
+        <figure *ngIf="i+1<size"><img routerLink='programas/{{viajes[i+1].id}}' src={{viajes[i+1].portada}}>
           <figcaption routerLink='programas/{{viajes[i+1].id}}'>
             <div>
               <p>{{viajes[i+1].nombre}}</p>

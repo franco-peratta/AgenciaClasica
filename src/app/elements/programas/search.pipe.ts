@@ -7,14 +7,14 @@ import { ViajesViewModel } from 'src/app/models/viajes-view-model';
 export class SearchPipe implements PipeTransform {
 
   transform(viajes: ViajesViewModel[], searchText: string): any {
-
     if (!searchText) {
       return viajes;
     }
-
     return viajes.filter((index: ViajesViewModel) => {
-      return index.nombre.toLowerCase().includes(searchText.toLowerCase());
+      return index.nombre.toLowerCase().includes(searchText.toLowerCase()) ||
+        index.destino.toLowerCase().includes(searchText.toLowerCase());
     });
+
   }
 
 }

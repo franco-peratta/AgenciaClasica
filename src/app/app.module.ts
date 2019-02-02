@@ -23,7 +23,6 @@ import { from } from 'rxjs';
 import { ProgramasComponent } from './elements/programas/programas.component';
 import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 
-import { MatTableDataSource, MatTableModule } from '@angular/material';
 import { SearchPipe } from './elements/programas/search.pipe';
 
 @NgModule({
@@ -38,7 +37,7 @@ import { SearchPipe } from './elements/programas/search.pipe';
     AboutComponent,
     ProgramasComponent,
     CircuitosEuropeosComponent,
-    SearchPipe,    
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +45,7 @@ import { SearchPipe } from './elements/programas/search.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgbModule,
-    ReactiveFormsModule,    
-    MatTableModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
