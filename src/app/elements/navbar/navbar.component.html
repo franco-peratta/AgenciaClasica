@@ -1,11 +1,13 @@
 <!--Logo de la empresa-->
+<!--
 <div class="border container-fluid">
   <a class="navbar-brand" routerLink="">
     <img [src]="'assets/media/logo.png'" height="80px" width="250px" alt="LOGO">
   </a>
 </div>
-
+-->
 <!--Navbar-->
+<!--
 <nav class="navbar navbar-icon-top navbar-expand-lg justify-content-md-center">
   <div>
     <ul class="navbar-nav text-center border">
@@ -52,5 +54,61 @@
         </a>
       </li>
     </ul>
+  </div>
+</nav>
+-->
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg static-top navbar-icon-top stroke">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">
+      <img [src]="'assets/media/logo_footer.png'" alt="" height="70px" width="200px">
+    </a>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a routerLink="" class="nav-link">
+            <i class="fa fa-home"></i>
+            Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="programas" class="nav-link">
+            <i class="fa fa-plane"></i>
+            Programas
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="circuitos_europeos" class="nav-link">
+            <i class="fa fa-eur" aria-hidden="true"></i>
+            Circuitos europeos
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="about" class="nav-link">
+            <i class="fa fa-info"></i>
+            Informacion
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="contacto" class="nav-link">
+            <i class="fa fa-envelope"></i>
+            Contacto
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a routerLink="contacto" class="nav-link">
+            <i class="fa fa-tripadvisor"></i>
+            TripAdvisor
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

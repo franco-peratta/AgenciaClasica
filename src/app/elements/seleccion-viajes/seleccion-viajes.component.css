@@ -48,6 +48,7 @@ h2 {
 
 p {
 	color: white;
+	padding-left: 2px;
 }
 
 p, li {
@@ -80,7 +81,7 @@ code {
 }  
 
 figcaption{
-	background-color:#3dd6d0;
+	background-color:#000e33;
 	color: white;
 	cursor: pointer;
 	font-size: 16px;

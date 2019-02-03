@@ -1,23 +1,64 @@
 /* navbar */
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
-
 .navbar{
-    background-color: #08034e;
+    background-color: #000e33 !important;
+    max-height: 80px;
 }
 
 nav .navbar-nav li a{
-    color: #ffffff !important;
+  color: #ffffff;
 }
-
-.bordered{
-    border: 3px solid black;
-}
-
+/*
 .navbar .navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
-    background-color: rgb(124, 184, 233);
+  background-color: rgb(199, 222, 241);
+}*/
+
+/* stroke */
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
 }
 
+nav.fill ul li a {
+  transition: all 2s;
+}
+
+nav.fill ul li a:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+nav.fill ul li a:hover {
+  color: #fff;
+  z-index: 1;
+}
+nav.fill ul li a:hover:after {
+  z-index: -10;
+  animation: fill 1s forwards;
+  -webkit-animation: fill 1s forwards;
+  -moz-animation: fill 1s forwards;
+  opacity: 1;
+}
+
+/*Icons*/
 .navbar-icon-top .navbar-nav .nav-link > .fa {
   position: relative;
   width: 36px;
