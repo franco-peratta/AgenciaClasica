@@ -14,7 +14,7 @@ export class ProgramasComponent implements OnInit {
   constructor(private viajesService: ViajesService) { }
 
   viajes: ViajesViewModel[] = [];
-  private filter: FormGroup;
+  filter: FormGroup;
 
   ngOnInit() {
     this.filter = new FormGroup({
