@@ -58,20 +58,7 @@ p, li {
 li {
 	margin-bottom: 7px;
 }
-  
-p + p {
-	margin-top: -7px;
-}
-  
-code {
-	background: #eee;
-	padding: 2px 5px;
-	font-size: 90%;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	margin: 0 2px;
-}
-  
+    
 .pics_in_a_row {
 	margin: 25px 0;
 }
@@ -94,7 +81,6 @@ figcaption{
 	color: rgb(255, 255, 255);
 }
 
-
 /*https://codepen.io/nxworld/pen/ZYNOBZ*/
 /* Gray Scale */
 .hover08 figure img {
@@ -107,7 +93,6 @@ figcaption{
 	-webkit-filter: grayscale(0);
 	filter: grayscale(0);
 }
-
 
 /* Flashing */
 .hover13 figure:hover img {

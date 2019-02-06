@@ -1,29 +1,20 @@
 @charset "utf-8";
 
-/* CSS Document */
-
-/******************************
-
-[Table of Contents]
-
-1. Fonts
-2. Body and some general stuff
-3. Home
-4. Header
-
-******************************/
-
-/***********
-1. Fonts
-***********/
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900');
-
 .footer {
-	/*background-image: url("https://i.stack.imgur.com/AZ2Xw.png");
-	background-position: center center;
-	background-repeat: no-repeat;*/
-	background-color: #071744;
+	margin-top: 150px;
+	background-color: #efefef;
+	color: white;
+	text-align: center;
+	background-image: url(src/assets/media/footer2.png);
+	/*background-color: #000e33;*/
 	width: 100%;
-	min-height: 200px;
+	height: 300px;
+}
+
+a + a {
+    margin-left: 20px;
+}
+
+i {
+	color: white;
 }
