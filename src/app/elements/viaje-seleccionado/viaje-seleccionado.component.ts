@@ -63,29 +63,39 @@ export class ViajeSeleccionadoComponent implements OnInit {
 
   toggleItinerario() {
     let itinerario = document.getElementById("itinerario");
+    let icon = document.getElementById("icon_itinerario");
+
     if (itinerario.className.indexOf("panel-invi") >= 0) {
       itinerario.classList.remove("panel-invi");
       itinerario.classList.add("panel-visible");
       let text = document.getElementById("itinerario");
       text.innerHTML = this.viaje.itinerario;
+
+      icon.className = "fa fa-angle-up";
     }
     else {
       itinerario.classList.remove("panel-visible");
       itinerario.classList.add("panel-invi");
+      icon.className = "fa fa-angle-down";
     }
   }
 
   toggleObs() {
     let obs = document.getElementById("observaciones");
+    let icon = document.getElementById("icon_observaciones");
+
     if (obs.className.indexOf("panel-invi") >= 0) {
       obs.classList.remove("panel-invi");
       obs.classList.add("panel-visible");
       let text = document.getElementById("observaciones");
       text.innerHTML = this.viaje.observaciones;
+
+      icon.className = "fa fa-angle-up";
     }
     else {
       obs.classList.remove("panel-visible");
       obs.classList.add("panel-invi");
+      icon.className = "fa fa-angle-down";
     }
   }
 

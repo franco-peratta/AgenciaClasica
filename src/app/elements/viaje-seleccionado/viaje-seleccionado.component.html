@@ -41,11 +41,15 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
             <div>
                 <h1 align="center">Detalles</h1>
                 <br>
-                <button class="accordion border" (click)=toggleItinerario()><b>Itinerario</b></button>
+                <button class="accordion border" (click)=toggleItinerario()>
+                    <b>Itinerario</b><span style="float:right;"><i id="icon_itinerario" class="fa fa-angle-down"></i></span>
+                </button>
                 <div class="panel-invi border" id="itinerario">
                 </div>
                 <br>
-                <button class="accordion" (click)=toggleObs()><b>Observaciones</b></button>
+                <button class="accordion" (click)=toggleObs() style="margin-top: 10px">
+                    <b>Observaciones</b><span style="float:right;"><i id="icon_observaciones" class="fa fa-angle-down"></i></span>
+                </button>
                 <div class="panel-invi border" id="observaciones">
                 </div>
             </div>
