@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ViajesService } from 'src/app/services/viajes-service.service';
 import { Viajes } from 'src/app/models/viajes';
-import { ViajesViewModel } from 'src/app/models/viajes-view-model';
 
 @Component({
   selector: 'app-form',

@@ -1,3 +1,5 @@
-#mapid { 
-    height: 180px; 
+.inner {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
 }

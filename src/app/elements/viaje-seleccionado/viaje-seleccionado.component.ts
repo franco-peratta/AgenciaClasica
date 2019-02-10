@@ -3,7 +3,7 @@ import { ViajesService } from 'src/app/services/viajes-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { ViajesViewModel } from 'src/app/models/viajes-view-model';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { config } from 'rxjs';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-viaje-seleccionado',
@@ -17,8 +17,9 @@ export class ViajeSeleccionadoComponent implements OnInit {
   ofertas = [];
   id: string;
   viaje: ViajesViewModel;
+  formdb: FormGroup;
 
-  constructor(private viajesService: ViajesService, private route: ActivatedRoute, config: NgbCarouselConfig) {
+  constructor(private viajesService: ViajesService, private route: ActivatedRoute, config: NgbCarouselConfig, private formBuilder: FormBuilder) {
     config.interval = 10000;
     config.wrap = false;
     config.keyboard = false;
@@ -31,6 +32,14 @@ export class ViajeSeleccionadoComponent implements OnInit {
     });
     this.loadViaje();
     this.loadOfertas();
+
+    this.formdb = this.formBuilder.group({
+      nombre: ['', Validators.required],
+      mail: ['', Validators.required],
+      adultos: ['', Validators.required],
+      niños: ['', Validators.required],
+      mensaje: ['', null],
+    })
   }
 
   loadViaje() {
@@ -127,5 +136,17 @@ export class ViajeSeleccionadoComponent implements OnInit {
   //ARREGLAR ESTA BARBARIDAD
   reloadWithDifferentId() {
     window.location.reload();
+  }
+
+  toggle_form() {
+    document.getElementById('form_div').style.display = "block";
+    document.getElementById('boton_reserva').style.display = "none";
+  }
+
+  reservar_programa() {
+    if (this.formdb.invalid) {
+      return;
+    }
+    let data = this.formdb.value;
   }
 }

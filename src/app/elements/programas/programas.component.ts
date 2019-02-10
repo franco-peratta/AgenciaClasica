@@ -46,5 +46,5 @@ export class ProgramasComponent implements OnInit {
         this.viajes.push(viaje_obj);
       });
     });
-  }
+  }  
 }

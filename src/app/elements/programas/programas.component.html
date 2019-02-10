@@ -1,12 +1,16 @@
 <div class="container-fluid">
     <br>
-    <h3>Programas</h3>
-    <form class="form-horizontal" [formGroup]="filter" novalidate>
-        <input type="text" class="form-control" formControlName="inputText" placeholder="Ingrese un valor para filtar la lista">
+    <h2 align="center">Programas diseñados para vos</h2><br>
+    <form class="form-horizontal inner" [formGroup]="filter" novalidate>
+        <p>Búsqueda: </p><input type="text" class="form-control" formControlName="inputText"
+            placeholder="Ingrese nombre del programa o el destino deseado">
         <br>
     </form>
     <br>
-    <table class="table table-sm border" *ngIf="viajes">
+
+    <!--https://getbootstrap.com/docs/4.0/content/tables/-->
+    <!--
+    <table class="table table-border" *ngIf="viajes">
         <tr>
             <th></th>
             <th class="border">Nombre</th>
@@ -26,5 +30,34 @@
             <td align="center"><a class="btn-sm btn-info" routerLink="{{index.id}}">Select</a></td>
         </tr>
         <tr></tr>
-    </table>
+    </table>-->
+
+    <div class="container-fluid">
+        <div class="card" *ngFor="let index of viajes | search :filter.get('inputText').value">
+            <div class="row ">
+                <div class="col-md-3">
+                    <img src={{index.portada}} height="250px" width="250px">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-block" style="margin-top: 10px">
+                        <h4 class="card-title">{{index.nombre}}</h4>
+                        <p><i class="fa fa-calendar"></i><b> Duracion: </b> {{index.duracion}}</p>
+                        <p><i class="fa fa-location-arrow"></i><b> Destino/s: </b> {{index.destino}}</p>
+                        <p><i class="fa fa-money"></i><b> Precio: </b> {{index.precio}}</p>
+                        <a routerLink={{index.id}} class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
 </div>
