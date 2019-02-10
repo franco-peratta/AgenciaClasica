@@ -19,7 +19,6 @@ import { ContactComponent } from './elements/contact/contact.component';
 import { ViajeSeleccionadoComponent } from './elements/viaje-seleccionado/viaje-seleccionado.component';
 import { AboutComponent } from './elements/about/about.component';
 
-import { from } from 'rxjs';
 import { ProgramasComponent } from './elements/programas/programas.component';
 import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 
@@ -45,7 +44,7 @@ import { SearchPipe } from './elements/programas/search.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgbModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

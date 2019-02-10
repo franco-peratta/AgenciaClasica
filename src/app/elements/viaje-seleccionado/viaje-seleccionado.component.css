@@ -6,11 +6,6 @@
   margin-top: 30px
 }
 
-body {
-  background: #9b59b6;
-  font: normal 300 1em/1.5em 'Ubuntu', sans-serif;
-}
-
 .quote {
   background: #fff;
   width: 100%;
@@ -20,8 +15,16 @@ body {
   padding: 1.5em;
 }
 
-p { margin-bottom: 1.5em; }
-p:last-child { margin-bottom: 0; }
+p { 
+  margin-bottom: 1.5em; 
+}
+p:last-child { 
+  margin-bottom: 0; 
+}
+
+#panel_detalles {
+  background: #f3f1f1;;
+}
 
 blockquote {
   display: block;

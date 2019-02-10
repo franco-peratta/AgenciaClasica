@@ -25,6 +25,11 @@
   align-items: center;
   justify-content: left;
 }
+p {
+  color: white;
+  font-size: 6vw;
+  padding-right: 40px;
+}
 h1 {
   color: white;
   font-family: 'Nobile', sans-serif;
