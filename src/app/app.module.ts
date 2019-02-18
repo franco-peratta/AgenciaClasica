@@ -23,6 +23,9 @@ import { ProgramasComponent } from './elements/programas/programas.component';
 import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 
 import { SearchPipe } from './elements/programas/search.pipe';
+import { CoreModule } from './core/core.module';
+import { LoginComponent } from './elements/login/login.component';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,7 @@ import { SearchPipe } from './elements/programas/search.pipe';
     ProgramasComponent,
     CircuitosEuropeosComponent,
     SearchPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,9 +48,10 @@ import { SearchPipe } from './elements/programas/search.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
