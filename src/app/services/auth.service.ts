@@ -38,7 +38,7 @@ export class AuthService {
   private oAuthLogin(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then(credentials => {
-        this.router.navigate(['/form']);
+        this.router.navigate(['/abm']);
       })
       .catch(err => {
         alert("Email o password inválido");
