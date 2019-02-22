@@ -1,51 +1,86 @@
 <div class="inner">
-  <form [formGroup]="formdb" (ngSubmit)="saveViaje()">
-    <div class="form-group">
-      Nombre del programa
-      <br>
-      <input type="text" name="nombre" class="form-control" formControlName="nombre">
-      <br>
-      Destino
-      <br>
-      <input type="text" name="destino" class="form-control" formControlName="destino">
-      <br>
-      Duracion
-      <br>
-      <input type="text" name="duracion" class="form-control" formControlName="duracion"><br>
-      Precio
-      <br>
-      <input type="text" name="precio" class="form-control" placeholder="Indicar la concurrencia (USD, $, etc)" formControlName="precio"><br>
-      Descripcion
-      <br>
-      <textarea id="descripcion" class="form-control" formControlName="descripcion"></textarea>
-      <br>
-      Observacion
-      <br>
-      <textarea id="obs" class="form-control" formControlName="obs" placeholder="Insertar código HTML aquí"></textarea>
-      <br>
-      Itinerario
-      <br>
-      <textarea id="itinerario" class="form-control" formControlName="itinerario" placeholder="Insertar código HTML aquí"></textarea>
-      <br>
-      Portada
-      <input type="text" name="portada" class="form-control" formControlName="portada">
-      <br>
-      Foto1
-      <br>
-      <input type="text" name="foto1" class="form-control" formControlName="foto1">
-      <br>
-      Foto2
-      <br>
-      <input type="text" name="foto2" class="form-control" formControlName="foto2">
-      <br>
-      Foto3
-      <br>
-      <input type="text" name="foto3" class="form-control" formControlName="foto3">
-      <br>
-      Destacado
-      <input type="checkbox" name="destacado" class="form-control" formControlName="destacado">
-      <br>
-      <button class="btn btn-primary" [disabled]="formdb.invalid">Save</button>
-    </div>
-  </form>
+  <p></p>
+  <button (click)=logOut() type="button" class="btn btn-primary">LogOut</button>
+
+  <br><br>
+
+  <div class="list-group">
+    <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let index of mensajes">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{index.nombre}} - Asunto: {{index.asunto}}</h5>
+        <small>{{index.createdDate | date : format}}</small>
+      </div>
+      <p class="mb-1">{{index.mensaje}}</p>
+      <small>{{index.mail}}</small>
+      <a style="float: right; cursor: pointer" (click)=borrarMensaje(index)>
+        <i class="fa fa-trash fa-2x"></i>
+      </a>
+      <a style="float: right; cursor: pointer" (click)=marcarComoLeido(index)>
+        <i class="fa fa-eye fa-2x"></i>
+      </a>
+    </a>
+  </div>
+
+  <br>
+  <hr><br>
+
+  <button class="accordion border" (click)=toggleABM()>
+    <b>Agregar programa</b><span style="float:right;"><i id="iconABM" class="fa fa-angle-down"></i></span>
+  </button>
+  <div class="panel-invi" id="formulario">
+    <form [formGroup]="formdb" (ngSubmit)="saveViaje()">
+      <div class="form-group">
+        Nombre del programa
+        <br>
+        <input type="text" name="nombre" class="form-control" formControlName="nombre">
+        <br>
+        Destino
+        <br>
+        <input type="text" name="destino" class="form-control" formControlName="destino">
+        <br>
+        Duracion
+        <br>
+        <input type="text" name="duracion" class="form-control" formControlName="duracion"><br>
+        Precio
+        <br>
+        <input type="text" name="precio" class="form-control" placeholder="Indicar la concurrencia (USD, $, etc)"
+          formControlName="precio"><br>
+        Descripcion
+        <br>
+        <textarea id="descripcion" class="form-control" formControlName="descripcion"></textarea>
+        <br>
+        Observacion
+        <br>
+        <textarea id="obs" class="form-control" formControlName="obs"
+          placeholder="Insertar código HTML aquí"></textarea>
+        <br>
+        Itinerario
+        <br>
+        <textarea id="itinerario" class="form-control" formControlName="itinerario"
+          placeholder="Insertar código HTML aquí"></textarea>
+        <br>
+        Portada
+        <input type="text" name="portada" class="form-control" formControlName="portada">
+        <br>
+        Foto1
+        <br>
+        <input type="text" name="foto1" class="form-control" formControlName="foto1">
+        <br>
+        Foto2
+        <br>
+        <input type="text" name="foto2" class="form-control" formControlName="foto2">
+        <br>
+        Foto3
+        <br>
+        <input type="text" name="foto3" class="form-control" formControlName="foto3">
+        <br>
+        Destacado
+        <input type="checkbox" name="destacado" class="form-control" formControlName="destacado">
+        <br>
+        <button class="btn btn-primary" [disabled]="formdb.invalid">Save</button>
+      </div>
+    </form>
+  </div>
+  <hr>
+
 </div>

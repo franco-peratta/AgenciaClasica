@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: "programas/:id", component: ViajeSeleccionadoComponent },
   { path: "about", component: AboutComponent },
   { path: "login", component: LoginComponent },
-  { path: "abm", component: FormComponent, canActivate: [AuthGuard] },
+  { path: "admin", component: FormComponent, canActivate: [AuthGuard] },
   { path: "circuitos_europeos", component: CircuitosEuropeosComponent },
 ];
 

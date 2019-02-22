@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ViajesService } from 'src/app/services/viajes-service.service';
 import { Viajes } from 'src/app/models/viajes';
+import { AuthService } from 'src/app/services/auth.service';
+import { MessagesService } from 'src/app/services/messages.service';
+import { MensajeViewModel } from 'src/app/models/mensaje-view-model';
 
 @Component({
   selector: 'app-form',
@@ -11,10 +14,13 @@ import { Viajes } from 'src/app/models/viajes';
 export class FormComponent implements OnInit {
 
   formdb: FormGroup;
+  mensajes = [];
 
-  constructor(private formBuilder: FormBuilder, private viajesService: ViajesService) {
-
-  }
+  constructor(
+    private formBuilder: FormBuilder,
+    private viajesService: ViajesService,
+    private auth: AuthService,
+    private msj: MessagesService) { }
 
   ngOnInit() {
     this.formdb = this.formBuilder.group({
@@ -31,6 +37,8 @@ export class FormComponent implements OnInit {
       foto3: ['', Validators.required],
       destacado: ['', null]
     });
+
+    this.getMensajes();
   }
 
   saveViaje() {
@@ -65,10 +73,58 @@ export class FormComponent implements OnInit {
       destacado: this.formdb.value.destacado,
     }
 
-    //console.log(this.formdb.value.destacado);
-
     this.viajesService.saveViajes(viaje)
       .then(() => alert("Viaje guardado con exito!"))
       .catch(err => alert(err));
+  }
+
+  logOut() {
+    this.auth.signOut();
+  }
+
+  getMensajes() {
+    this.msj.getMensajes().subscribe(response => {
+      response.docs.forEach(value => {
+        const data = value.data();
+        const msj_obj: MensajeViewModel = {
+          id: value.id,
+          nombre: data.nombre,
+          mail: data.mail,
+          createdDate: data.createdDate.toDate(),
+          asunto: data.asunto,
+          mensaje: data.mensaje,
+          leido: data.leido
+        };
+        this.mensajes.push(msj_obj);
+      });
+    });
+  }
+
+  marcarComoLeido(mensaje: MensajeViewModel) {
+    console.log("entre marcar como leido ", mensaje.id);
+  }
+
+  borrarMensaje(mensaje: MensajeViewModel) {
+    this.msj.deleteMensaje(mensaje.id).then(() => { 
+      this.getMensajes();  
+      //VER COMO REFRESCAR LA LISTA    
+    }
+    );
+  }
+
+  toggleABM(){
+    let abm = document.getElementById("formulario");
+    let icon = document.getElementById("iconABM");
+
+    if (abm.className.indexOf("panel-invi") >= 0) {
+      abm.classList.remove("panel-invi");
+      abm.classList.add("panel-visible");
+      icon.className = "fa fa-angle-up";
+    }
+    else {
+      abm.classList.remove("panel-visible");
+      abm.classList.add("panel-invi");
+      icon.className = "fa fa-angle-down";
+    }
   }
 }

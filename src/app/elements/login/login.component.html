@@ -1,9 +1,4 @@
-<div *ngIf="auth.user | async; then authenticated else guest">
-  <!-- template will replace this div -->
-</div>
-
-<!-- User NOT logged in -->
-<ng-template #guest>
+<div>
   <div class="container-fluid inner">
     <form [formGroup]="form" (ngSubmit)="logIn()">
       <div class="form-group">
@@ -18,12 +13,4 @@
       </div>
     </form>
   </div>
-</ng-template>
-
-<!-- User logged in -->
-<ng-template #authenticated>
-  <div class="inner">
-    
-    <button class="btn btn-primary" (click)="logOut()">LogOut</button>
-  </div>
-</ng-template>
+</div>

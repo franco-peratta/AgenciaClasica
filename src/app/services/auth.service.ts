@@ -12,13 +12,9 @@ import { User } from '../models/user';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
-  user: Observable<User>;
+  private user: Observable<User>;
 
-  constructor(
-    private afAuth: AngularFireAuth,
-    private router: Router,
-  ) {
-
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
     //// Get auth data, then get firestore user document || null
     this.user = this.afAuth.authState.pipe(
       switchMap(user => {
@@ -38,7 +34,7 @@ export class AuthService {
   private oAuthLogin(email: string, password: string) {
     this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then(credentials => {
-        this.router.navigate(['/abm']);
+        this.router.navigate(['/admin']);
       })
       .catch(err => {
         alert("Email o password inválido");
@@ -49,5 +45,9 @@ export class AuthService {
     this.afAuth.auth.signOut().then(() => {
       this.router.navigate(['/']);
     });
+  }
+
+  getUser(): Observable<User> {
+    return this.user;
   }
 }
