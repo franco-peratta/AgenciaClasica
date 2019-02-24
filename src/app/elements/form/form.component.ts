@@ -14,7 +14,7 @@ import { MensajeViewModel } from 'src/app/models/mensaje-view-model';
 export class FormComponent implements OnInit {
 
   formdb: FormGroup;
-  mensajes = [];
+  mensajes: MensajeViewModel[];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -83,6 +83,7 @@ export class FormComponent implements OnInit {
   }
 
   getMensajes() {
+    this.mensajes = [];
     this.msj.getMensajes().subscribe(response => {
       response.docs.forEach(value => {
         const data = value.data();
@@ -100,19 +101,20 @@ export class FormComponent implements OnInit {
     });
   }
 
-  marcarComoLeido(mensaje: MensajeViewModel) {
+  /*marcarComoLeido(mensaje: MensajeViewModel) {
     console.log("entre marcar como leido ", mensaje.id);
-  }
+  }*/
 
   borrarMensaje(mensaje: MensajeViewModel) {
-    this.msj.deleteMensaje(mensaje.id).then(() => { 
-      this.getMensajes();  
-      //VER COMO REFRESCAR LA LISTA    
+    this.msj.deleteMensaje(mensaje.id).then(() => {
+      //Refresco la lista de mensajes
+      this.getMensajes();
+      alert("Mensaje borrado con exito");
     }
     );
   }
 
-  toggleABM(){
+  toggleABM() {
     let abm = document.getElementById("formulario");
     let icon = document.getElementById("iconABM");
 

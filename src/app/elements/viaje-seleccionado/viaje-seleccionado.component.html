@@ -26,8 +26,8 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
 
             <div *ngIf="viaje" class="border" id="panel_detalles">
                 <p><i class="fa fa-calendar"></i><b> Duracion: </b> {{viaje.duracion}}</p>
-                <button type="button" id="boton_reserva" class="btn btn-primary" style="float: right; margin-right: 10px;"
-                    (click)=toggle_form()>Reservar</button>
+                <button type="button" id="boton_reserva" class="btn btn-primary"
+                    style="float: right; margin-right: 10px;" (click)=toggle_form()>Reservar</button>
                 <p><i class="fa fa-location-arrow"></i><b> Destino/s: </b> {{viaje.destino}}</p>
                 <p><i class="fa fa-money"></i><b> Precio: </b> {{viaje.precio}}</p>
             </div>
@@ -95,9 +95,10 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                 </div>
             </div>
             <br>
-            <div class="" id="form_div" style="display: none">
-                <br><hr><br>
-                <form [formGroup]="formdb" (ngSubmit)="reservar_programa()">
+            <div id="form_div" style="display: none">
+                <br>
+                <hr><br>
+                <form [formGroup]="form" (ngSubmit)="send_message()">
                     <div class="form-group">
                         Nombre y Apellido *
                         <br>
@@ -107,16 +108,10 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                         <br>
                         <input type="text" name="mail" class="form-control" formControlName="mail">
                         <br>
-                        Adultos *
-                        <br>
-                        <input type="text" name="adultos" class="form-control" formControlName="adultos"><br>
-                        Niños *
-                        <br>
-                        <input type="text" name="niños" class="form-control" formControlName="niños"><br>
                         Mensaje y observaciones (opcional)
-                        <textarea id="mensaje" class="form-control" formControlName="mensaje"></textarea>
+                        <textarea id="mensaje" class="form-control" formControlName="mensaje" placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
                         <br>
-                        <button class="btn btn-primary" [disabled]="formdb.invalid">Reservar</button>
+                        <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
                     </div>
                 </form>
             </div>

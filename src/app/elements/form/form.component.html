@@ -2,9 +2,9 @@
   <p></p>
   <button (click)=logOut() type="button" class="btn btn-primary">LogOut</button>
 
-  <br><br>
-
-  <div class="list-group">
+  <br><hr>
+  <h2>Mensajes</h2>
+  <div class="list-group" id="lista_mensajes">
     <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let index of mensajes">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">{{index.nombre}} - Asunto: {{index.asunto}}</h5>
@@ -15,9 +15,9 @@
       <a style="float: right; cursor: pointer" (click)=borrarMensaje(index)>
         <i class="fa fa-trash fa-2x"></i>
       </a>
-      <a style="float: right; cursor: pointer" (click)=marcarComoLeido(index)>
+      <!--<a style="float: right; cursor: pointer" (click)=marcarComoLeido(index)>
         <i class="fa fa-eye fa-2x"></i>
-      </a>
+      </a>-->
     </a>
   </div>
 

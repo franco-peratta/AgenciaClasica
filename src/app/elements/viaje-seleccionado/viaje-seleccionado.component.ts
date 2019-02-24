@@ -4,6 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ViajesViewModel } from 'src/app/models/viajes-view-model';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Mensaje } from 'src/app/models/mensaje';
+import { MessagesService } from 'src/app/services/messages.service';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-viaje-seleccionado',
@@ -17,9 +20,14 @@ export class ViajeSeleccionadoComponent implements OnInit {
   ofertas = [];
   id: string;
   viaje: ViajesViewModel;
-  formdb: FormGroup;
+  form: FormGroup;
 
-  constructor(private viajesService: ViajesService, private route: ActivatedRoute, config: NgbCarouselConfig, private formBuilder: FormBuilder) {
+  constructor(
+    private viajesService: ViajesService,
+    private route: ActivatedRoute,
+    config: NgbCarouselConfig,
+    private formBuilder: FormBuilder,
+    private mensajes_service: MessagesService) {
     config.interval = 10000;
     config.wrap = false;
     config.keyboard = false;
@@ -33,11 +41,11 @@ export class ViajeSeleccionadoComponent implements OnInit {
     this.loadViaje();
     this.loadOfertas();
 
-    this.formdb = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       nombre: ['', Validators.required],
       mail: ['', Validators.required],
-      adultos: ['', Validators.required],
-      niños: ['', Validators.required],
+      adultos: ['', null],
+      niños: ['', null],
       mensaje: ['', null],
     })
   }
@@ -139,14 +147,34 @@ export class ViajeSeleccionadoComponent implements OnInit {
   }
 
   toggle_form() {
-    document.getElementById('form_div').style.display = "block";
-    document.getElementById('boton_reserva').style.display = "none";
+    if (document.getElementById("form_div").style.display === "none") {
+      document.getElementById('form_div').style.display = "block";
+      document.getElementById('boton_reserva').style.display = "none";
+    }
+    else {
+      document.getElementById('form_div').style.display = "none";
+    }
   }
 
-  reservar_programa() {
-    if (this.formdb.invalid) {
+  send_message() {
+    if (this.form.invalid) {
       return;
     }
-    let data = this.formdb.value;
+
+    let mensaje: Mensaje = {
+      mail: this.form.value.mail,
+      nombre: this.form.value.nombre,
+      asunto: this.viaje.nombre,
+      mensaje: this.form.value.mensaje,
+      createdDate: new Date(),
+      leido: false,
+    }
+
+    this.mensajes_service.saveMensaje(mensaje);
+    alert("Mensaje enviado con exito. En breve nos pondremos en contacto");
+
+    //limpio los campos del formulario
+    this.form.reset();
+    this.toggle_form();
   }
 }
