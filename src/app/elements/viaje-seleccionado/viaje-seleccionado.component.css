@@ -91,3 +91,7 @@ blockquote:before {
   cursor: pointer;
   margin-top: 15px;
 }
+
+.clickable {
+  cursor: pointer;
+}

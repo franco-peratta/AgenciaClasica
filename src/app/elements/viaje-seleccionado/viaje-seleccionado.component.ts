@@ -6,7 +6,6 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Mensaje } from 'src/app/models/mensaje';
 import { MessagesService } from 'src/app/services/messages.service';
-import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-viaje-seleccionado',
@@ -35,6 +34,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scroll(0, 0);
     this.route.paramMap.subscribe(params => {
       this.id = params.get("id");
     });
@@ -177,4 +177,28 @@ export class ViajeSeleccionadoComponent implements OnInit {
     this.form.reset();
     this.toggle_form();
   }
+
+  shareFacebook() {
+    let url = "https://www.facebook.com/sharer/sharer.php?u=".concat(window.location.href);
+    console.log(url);
+    let win = window.open(url, '_blank');
+    win.focus();
+  }
+
+  shareTwitter() {
+    //https://twitter.com/share?text=text goes here&url=http://url goes here&hashtags=hashtag1,hashtag2,hashtag3
+    
+    let url = "https://twitter.com/share?text=".concat(this.viaje.nombre).concat("&url=").concat(window.location.href).concat("&hashtags=AgenciaClasica");
+    console.log(url);
+    let win = window.open(url, '_blank');
+    win.focus();
+  }
+
+  /*shareGoogle() {
+    //href="https://plus.google.com/share?url=https://simplesharebuttons.com"
+    let url = "https://www.facebook.com/sharer/sharer.php?u=".concat(window.location.href);
+    console.log(url);
+    let win = window.open(url, '_blank');
+    win.focus();
+  }*/
 }

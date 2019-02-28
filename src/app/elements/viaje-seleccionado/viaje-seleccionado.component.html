@@ -59,21 +59,19 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
             </div>
 
             <hr>
-
             <div align="center" id="share-buttons">
                 <!-- Facebook -->
-                <a href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank">
+                <a class="clickable" (click)="shareFacebook()" target="_blank">
                     <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
                 </a>
                 <!-- Twitter -->
-                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons"
-                    target="_blank">
+                <a class="clickable" (click)="shareTwitter()" target="_blank">
                     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
                 </a>
-                <!-- Google+ -->
-                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                <!-- Google+ - ->
+                <a class="clickable" (click)="shareGoogle()" target="_blank">
                     <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-                </a>
+                </a>-->
             </div>
         </div>
         <div class="col-sm-4" style="text-align:center;margin-top:30px;">
@@ -109,7 +107,8 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                         <input type="text" name="mail" class="form-control" formControlName="mail">
                         <br>
                         Mensaje y observaciones (opcional)
-                        <textarea id="mensaje" class="form-control" formControlName="mensaje" placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
+                        <textarea id="mensaje" class="form-control" formControlName="mensaje"
+                            placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
                         <br>
                         <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
                     </div>
