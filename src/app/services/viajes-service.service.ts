@@ -29,12 +29,12 @@ export class ViajesService {
   saveViajes(Viajes: Viajes): Promise<DocumentReference> {
     return this.db.collection(this.ViajesCollectionName).add(Viajes);
   }
-  editViajes(Viajes: ViajesViewModel): Promise<void> {
+  /*editViajes(Viajes: ViajesViewModel): Promise<void> {
     return this.db.collection(this.ViajesCollectionName).doc(Viajes.id).update(Viajes);
-  }
-  /*editViajesPartial(id: string, obj: Object): Promise<void> {
-    return this.db.collection(this.ViajesCollectionName).doc(id).update(obj);
   }*/
+  editViajesPartial(id: string, obj: Object): Promise<void> {
+    return this.db.collection(this.ViajesCollectionName).doc(id).update(obj);
+  }
   deleteViajes(idViajes: string): Promise<void> {
     return this.db.collection(this.ViajesCollectionName).doc(idViajes).delete();
   }

@@ -1,7 +1,9 @@
 <div>
-  <div class="container-fluid inner">
-    <form [formGroup]="form" (ngSubmit)="logIn()">
+  <div class="container-fluid inner">    
+    <form [formGroup]="form" (ngSubmit)="logIn()">      
       <div class="form-group">
+        <img class="center" [src] = "'assets/media/logo.png'" width="50%" height="50%">
+        <hr>
         E-mail *
         <br>
         <input type="text" name="email" class="form-control" formControlName="email">

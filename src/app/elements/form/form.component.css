@@ -33,3 +33,7 @@ a + a {
 .panel-invi {
   display: none;
 }
+
+#delete_button {
+  margin-left: 15px;
+}

@@ -10,7 +10,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormComponent } from './elements/form/form.component';
@@ -50,6 +50,7 @@ import { AuthGuard } from './services/auth.guard';
     NgbModule,
     ReactiveFormsModule,
     CoreModule,
+    FormsModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]

@@ -2,7 +2,8 @@
   <p></p>
   <button (click)=logOut() type="button" class="btn btn-primary">Log out</button>
 
-  <br><hr>
+  <br>
+  <hr>
   <h2>Mensajes</h2>
   <div class="list-group" id="lista_mensajes">
     <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let index of mensajes">
@@ -27,7 +28,7 @@
   <button class="accordion border" (click)=toggleABM()>
     <b>Agregar programa</b><span style="float:right;"><i id="iconABM" class="fa fa-angle-down"></i></span>
   </button>
-  <div class="panel-invi" id="formulario">
+  <div class="panel-invi" id="formulario1">
     <form [formGroup]="formdb" (ngSubmit)="saveViaje()">
       <div class="form-group">
         Nombre del programa
@@ -82,5 +83,47 @@
     </form>
   </div>
   <hr>
+  <button class="accordion border" (click)=toggleEdit()>
+    <b>Editar programa</b><span style="float:right;"><i id="iconEdit" class="fa fa-angle-down"></i></span>
+  </button>
+  <div class="panel-invi" id="formulario2">
 
+    <div class="form-group">
+      <label for="viaje">Seleccione el programa a editar</label>
+      <select id="select" name="select" [(ngModel)]="ViajesViewModel" (ngModelChange)="cargarViajeAEditar($event)"
+        class="form-control">
+        <option *ngFor="let viaje of viajes, let i = index" [value]=i>
+          {{viaje.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <form>
+      <div class="form-group">
+        Nombre del programa
+        <br>
+        <input type="text" class="form-control" name="nombre" id="nombre">
+        <br>
+        Destino
+        <br>
+        <input type="text" class="form-control" name="destino" id="destino">
+        <br>
+        Duracion
+        <br>
+        <input type="text" class="form-control" name="duracion" id="duracion"><br>
+        Precio
+        <br>
+        <input type="text" name="precio" id="precio" class="form-control"><br>
+        <br>
+        Portada
+        <input type="text" class="form-control" name="portada" id="portada">
+        <br>
+        Destacado
+        <input type="checkbox" name="destacado" class="form-control" id="destacado">
+        <br>
+        <button id="edit_button" (click)=editViaje() class="btn btn-primary" disabled>Edit</button>
+        <button id="delete_button" (click)=deleteViaje() class="btn btn-danger" disabled>Delete</button>
+      </div>
+    </form>
+  </div>
 </div>
