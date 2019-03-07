@@ -182,9 +182,9 @@ export class FormComponent implements OnInit {
     }
   }
 
-  cargarViajeAEditar(event: number) {
-    //en "event" tengo el indice del programa elegido en el array this.viajes[]    
-    let viaje = this.viajes[event];
+  cargarViajeAEditar() {
+
+    let viaje = this.viajes[(<HTMLInputElement>document.getElementById("select")).value];
 
     (<HTMLInputElement>document.getElementById("nombre")).value = viaje.nombre;
 
@@ -218,7 +218,8 @@ export class FormComponent implements OnInit {
     this.viajesService.editViajesPartial(this.viajes[viaje_index].id, viaje)
       .then(res => {
         alert('La edición ha sido exitosa');
-        this.cargarViajeAEditar(Number(viaje_index));
+        this.loadViajes();
+        this.cargarViajeAEditar();
         this.toggleEdit();
       });
   }

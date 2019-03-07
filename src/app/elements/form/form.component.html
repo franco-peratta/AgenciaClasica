@@ -90,9 +90,11 @@
 
     <div class="form-group">
       <label for="viaje">Seleccione el programa a editar</label>
-      <select id="select" name="select" [(ngModel)]="ViajesViewModel" (ngModelChange)="cargarViajeAEditar($event)"
-        class="form-control">
-        <option *ngFor="let viaje of viajes, let i = index" [value]=i>
+      <select id="select" name="select" class="form-control">
+        <option value="" disabled>
+          Programas
+        </option>
+        <option *ngFor="let viaje of viajes, let i = index" [value]=i (click)="cargarViajeAEditar()">
           {{viaje.nombre}}
         </option>
       </select>
