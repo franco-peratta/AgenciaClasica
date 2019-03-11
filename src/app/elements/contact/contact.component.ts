@@ -20,6 +20,7 @@ export class ContactComponent implements OnInit {
       nombre: ['', Validators.required],
       mail: ['', Validators.required],
       mensaje: ['', Validators.required],
+      recaptchaReactive: ['', Validators.required],
     });
   }
 
@@ -34,7 +35,7 @@ export class ContactComponent implements OnInit {
     }
     this.mensajes_service.saveMensaje(mensaje);
     alert("Mensaje enviado con exito");
-    
+
     //limpio los campos del formulario
     this.form.reset();
   }

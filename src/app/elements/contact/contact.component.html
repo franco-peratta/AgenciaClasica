@@ -11,7 +11,7 @@
         el
         sueño de viajar!
       </p>
-      
+
       <form [formGroup]="form" (ngSubmit)="send_message()" style="margin-top: 50px">
         <div class="form-group">
           Nombre y Apellido *
@@ -23,9 +23,16 @@
           Mensaje *
           <br>
           <textarea class="form-control" formControlName="mensaje"></textarea><br>
+          <br>
+          <re-captcha formControlName="recaptchaReactive" siteKey="6Lfp75YUAAAAADKD8ILWr9D-opHVYV8B3celWq0e"></re-captcha>
+          <br>
           <button class="btn btn-primary" [disabled]="form.invalid">Enviar</button>
         </div>
       </form>
+
+
+
+
     </div>
     <div class="col-sm-4">
       <ul style="list-style-type:none">
