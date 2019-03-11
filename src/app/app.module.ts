@@ -11,7 +11,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgxCaptchaModule } from 'ngx-captcha';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
@@ -54,7 +53,6 @@ import { AuthGuard } from './services/auth.guard';
     ReactiveFormsModule,
     CoreModule,
     FormsModule,
-    NgxCaptchaModule,
     RecaptchaModule,
     RecaptchaFormsModule,
   ],
