@@ -9,7 +9,10 @@ export class VideoComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    var video = <HTMLVideoElement>document.getElementById("video-bg");
+    //de lo contrario el video no se reproduce automaticamente en google chrome
+    video.muted = true;
+    video.play();
   }
-
 }

@@ -79,8 +79,17 @@ figcaption{
 .btn {
 	color: black;
 }
-.btn-primary {
-	color: rgb(255, 255, 255);
+@media screen and (min-width: 831px) {
+	.btn-primary {
+		color: rgb(255, 255, 255);
+		float: right; 
+		margin-top:8px
+	}
+}
+@media screen and (max-width: 830px) {	
+	.btn-primary {
+		display: none;
+	}
 }
 
 /*https://codepen.io/nxworld/pen/ZYNOBZ*/

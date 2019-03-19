@@ -27,10 +27,12 @@ export class ViajeSeleccionadoComponent implements OnInit {
     config: NgbCarouselConfig,
     private formBuilder: FormBuilder,
     private mensajes_service: MessagesService) {
-    config.interval = 10000;
-    config.wrap = false;
+    config.interval = 3000;
+    config.wrap = true;
+    config.showNavigationArrows = true;
+    config.showNavigationIndicators = true;
     config.keyboard = false;
-    config.pauseOnHover = false;
+    config.pauseOnHover = true;
   }
 
   ngOnInit() {
@@ -75,7 +77,9 @@ export class ViajeSeleccionadoComponent implements OnInit {
       for (let entry of viaje_obj.fotos) { //of me da el contenido dentro del indice (entry: fotos[i])
         this.images.push(entry);
       }
-    })
+      this.toggleItinerario();
+      this.toggleObs();
+    });
   }
 
   toggleItinerario() {
@@ -150,6 +154,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
     if (document.getElementById("form_div").style.display === "none") {
       document.getElementById('form_div').style.display = "block";
       document.getElementById('boton_reserva').style.display = "none";
+      window.scrollBy(0, 100); // Scroll 100px down
     }
     else {
       document.getElementById('form_div').style.display = "none";
@@ -187,7 +192,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
 
   shareTwitter() {
     //https://twitter.com/share?text=text goes here&url=http://url goes here&hashtags=hashtag1,hashtag2,hashtag3
-    
+
     let url = "https://twitter.com/share?text=".concat(this.viaje.nombre).concat("&url=").concat(window.location.href).concat("&hashtags=AgenciaClasica");
     console.log(url);
     let win = window.open(url, '_blank');

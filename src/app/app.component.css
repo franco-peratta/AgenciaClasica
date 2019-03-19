@@ -22,3 +22,7 @@ a + a {
 i {
 	color: white;
 }
+
+.full-heigth {
+	min-height: 70vh;
+}

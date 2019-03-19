@@ -32,6 +32,30 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                 <p><i class="fa fa-money"></i><b> Precio: </b> {{viaje.precio}}</p>
             </div>
 
+            <br>
+            <div id="form_div" style="display: none">
+                <br>
+                <hr><br>
+                <form [formGroup]="form" (ngSubmit)="send_message()">
+                    <div class="form-group">
+                        Nombre y Apellido *
+                        <br>
+                        <input type="text" name="nombre" class="form-control" formControlName="nombre">
+                        <br>
+                        E-mail *
+                        <br>
+                        <input type="text" name="mail" class="form-control" formControlName="mail">
+                        <br>
+                        Mensaje y observaciones (opcional)
+                        <textarea id="mensaje" class="form-control" formControlName="mensaje"
+                            placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
+                        <br>
+                        <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
+                    </div>
+                </form>
+                <hr>
+            </div>
+
             <div class="quote">
                 <!--https://1stwebdesigner.com/css-snippets-blockquotes/-->
                 <blockquote>
@@ -92,29 +116,6 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                     </div>
                 </div>
             </div>
-            <br>
-            <div id="form_div" style="display: none">
-                <br>
-                <hr><br>
-                <form [formGroup]="form" (ngSubmit)="send_message()">
-                    <div class="form-group">
-                        Nombre y Apellido *
-                        <br>
-                        <input type="text" name="nombre" class="form-control" formControlName="nombre">
-                        <br>
-                        E-mail *
-                        <br>
-                        <input type="text" name="mail" class="form-control" formControlName="mail">
-                        <br>
-                        Mensaje y observaciones (opcional)
-                        <textarea id="mensaje" class="form-control" formControlName="mensaje"
-                            placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
-                        <br>
-                        <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
-                    </div>
-                </form>
-            </div>
-
         </div>
     </div>
 </div>

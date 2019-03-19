@@ -2,9 +2,11 @@
 
 <div class="video-container">
   <video autoplay loop muted id="video-bg">
+    <source [src]="'assets/media/video.mp4'" type="video/webm" />
     <source [src]="'assets/media/video.mp4'" type="video/mp4" />
   </video>
   <div class="overlay-desc" id="spinner">
-    <p>Diseñamos</p><h1><span id="spin"></span></h1>
+    <p>Diseñamos</p>
+    <h1><span id="spin"></span></h1>
   </div>
 </div>
