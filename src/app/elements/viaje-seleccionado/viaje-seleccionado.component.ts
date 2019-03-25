@@ -46,9 +46,8 @@ export class ViajeSeleccionadoComponent implements OnInit {
     this.form = this.formBuilder.group({
       nombre: ['', Validators.required],
       mail: ['', Validators.required],
-      adultos: ['', null],
-      niños: ['', null],
       mensaje: ['', null],
+      recaptchaReactive: ['', Validators.required],
     })
   }
 

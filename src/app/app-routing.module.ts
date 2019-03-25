@@ -9,6 +9,7 @@ import { ProgramasComponent } from './elements/programas/programas.component';
 import { CircuitosEuropeosComponent } from './elements/circuitos-europeos/circuitos-europeos.component';
 import { AuthGuard } from './services/auth.guard';
 import { LoginComponent } from './elements/login/login.component';
+import { NotfoundComponent } from './elements/notfound/notfound.component';
 
 const routes: Routes = [
   { path: "", component: SeleccionViajesComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "admin", component: FormComponent, canActivate: [AuthGuard] },
   { path: "circuitos_europeos", component: CircuitosEuropeosComponent },
+  { path: "**", component: NotfoundComponent },
 ];
 
 @NgModule({

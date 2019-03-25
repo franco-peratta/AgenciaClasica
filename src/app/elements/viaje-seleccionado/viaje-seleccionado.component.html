@@ -50,6 +50,11 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                         <textarea id="mensaje" class="form-control" formControlName="mensaje"
                             placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
                         <br>
+                        <!--Captcha-->
+                        <!--https://www.npmjs.com/package/ng-recaptcha-->
+                        <re-captcha formControlName="recaptchaReactive"
+                            siteKey="6Lfp75YUAAAAADKD8ILWr9D-opHVYV8B3celWq0e"></re-captcha>
+                        <br>
                         <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
                     </div>
                 </form>

@@ -28,6 +28,7 @@ import { SearchPipe } from './elements/programas/search.pipe';
 import { CoreModule } from './core/core.module';
 import { LoginComponent } from './elements/login/login.component';
 import { AuthGuard } from './services/auth.guard';
+import { NotfoundComponent } from './elements/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AuthGuard } from './services/auth.guard';
     CircuitosEuropeosComponent,
     SearchPipe,
     LoginComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

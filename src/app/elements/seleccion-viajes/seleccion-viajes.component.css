@@ -93,37 +93,12 @@ figcaption{
 }
 
 /*https://codepen.io/nxworld/pen/ZYNOBZ*/
-/* Gray Scale */
-.hover08 figure img {
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+/* Opacity #2 */
+.hover12 figure img {
+	opacity: 1;
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.hover08 figure:hover img {
-	-webkit-filter: grayscale(0);
-	filter: grayscale(0);
-}
-
-/* Flashing */
-.hover13 figure:hover img {
-	opacity: 1;
-	-webkit-animation: flash 1s;
-	animation: flash 1s;
-}
-@-webkit-keyframes flash {
-	0% {
-		opacity: .4;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-@keyframes flash {
-	0% {
-		opacity: .4;
-	}
-	100% {
-		opacity: 1;
-	}
+.hover12 figure:hover img {
+	opacity: .8;
 }
