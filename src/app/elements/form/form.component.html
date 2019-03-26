@@ -90,16 +90,17 @@
 
     <div class="form-group">
       <label for="viaje">Seleccione el programa a editar</label>
-      <select id="select" name="select" class="form-control">
+      <select id="select" name="select" class="form-control" (click)="cargarViajeAEditar()"> 
         <option value="" disabled>
           Programas
         </option>
-        <option *ngFor="let viaje of viajes, let i = index" [value]=i (click)="cargarViajeAEditar()">
+        <option *ngFor="let viaje of viajes, let i = index" [value]=i>
           {{viaje.nombre}}
         </option>
       </select>
     </div>
 
+    <!--NO uso FormGroup porque no me deja llenar los campos del formulario via TypeScript-->
     <form>
       <div class="form-group">
         Nombre del programa

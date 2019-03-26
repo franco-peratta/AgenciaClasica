@@ -6,7 +6,6 @@ import { AuthService } from 'src/app/services/auth.service';
 import { MessagesService } from 'src/app/services/messages.service';
 import { MensajeViewModel } from 'src/app/models/mensaje-view-model';
 import { ViajesViewModel } from 'src/app/models/viajes-view-model';
-import { stringify } from '@angular/core/src/util';
 
 @Component({
   selector: 'app-form',
@@ -183,23 +182,26 @@ export class FormComponent implements OnInit {
   }
 
   cargarViajeAEditar() {
-
+    
     let viaje = this.viajes[(<HTMLInputElement>document.getElementById("select")).value];
 
-    (<HTMLInputElement>document.getElementById("nombre")).value = viaje.nombre;
+    //chequeo que no sea ni null ni undefined
+    if (viaje != null) {
+      (<HTMLInputElement>document.getElementById("nombre")).value = viaje.nombre;
 
-    (<HTMLInputElement>document.getElementById("destino")).value = viaje.destino;
+      (<HTMLInputElement>document.getElementById("destino")).value = viaje.destino;
 
-    (<HTMLInputElement>document.getElementById("duracion")).value = viaje.duracion;
+      (<HTMLInputElement>document.getElementById("duracion")).value = viaje.duracion;
 
-    (<HTMLInputElement>document.getElementById("precio")).value = viaje.precio;
+      (<HTMLInputElement>document.getElementById("precio")).value = viaje.precio;
 
-    (<HTMLInputElement>document.getElementById("portada")).value = viaje.portada;
+      (<HTMLInputElement>document.getElementById("portada")).value = viaje.portada;
 
-    (<HTMLInputElement>document.getElementById("destacado")).checked = viaje.destacado;
+      (<HTMLInputElement>document.getElementById("destacado")).checked = viaje.destacado;
 
-    (<HTMLInputElement>document.getElementById("edit_button")).disabled = false;
-    (<HTMLInputElement>document.getElementById("delete_button")).disabled = false;
+      (<HTMLInputElement>document.getElementById("edit_button")).disabled = false;
+      (<HTMLInputElement>document.getElementById("delete_button")).disabled = false;
+    }
   }
 
   editViaje() {
