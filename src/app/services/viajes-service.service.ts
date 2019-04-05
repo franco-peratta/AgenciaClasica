@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Viajes } from 'src/app/models/viajes';
 import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { ViajesViewModel } from '../models/viajes-view-model';
 
 @Injectable({
   providedIn: 'root'

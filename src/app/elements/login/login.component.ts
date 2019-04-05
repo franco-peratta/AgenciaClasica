@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MessagesService } from 'src/app/services/messages.service';
-import { Mensaje } from 'src/app/models/mensaje';
 
 @Component({
   selector: 'app-login',
