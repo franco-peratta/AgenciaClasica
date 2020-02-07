@@ -95,3 +95,8 @@ blockquote:before {
 .clickable {
   cursor: pointer;
 }
+
+.img-slider {
+  width: 100%;
+  height: 100%;
+}
