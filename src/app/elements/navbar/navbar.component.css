@@ -4,7 +4,12 @@
 
 .navbar{
     /*background-color: lightgray !important;*/
-    max-height: 20vh;
+    height: 10vh;
+}
+
+.nav-logo{
+  height: 8vh;
+  width: auto;
 }
 
 nav .navbar-nav li a{
@@ -32,7 +37,7 @@ nav.fill ul li a:after {
   width: 0%;
   content: '.';
   color: transparent;
-  background: #aaa;
+  background: black;
   height: 1px;
 }
 nav.stroke ul li a:hover:after {
