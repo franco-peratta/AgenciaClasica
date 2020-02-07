@@ -1,71 +1,11 @@
-/* Pantalla normal / grande */
-@media screen and (min-width: 721px) {
-  #spin { 
-    font-weight: bold;
-    color: white;
-    font-family: 'Nobile', sans-serif;
-    font-size: 7vw;
-    text-align: center;
-  }
-  #spin:after {
-    content:"";
-    animation: spin 10s linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { content:"viajes"; }
-    28% { content:"sueños"; }
-    69% { content:"aventuras"; }
-    100% { content:"viajes"; }
-  }
-  
-  .overlay-desc {
-    background: rgba(0,0,0,0);
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-  }
-  p {
-    color: white;
-    font-size: 6vw;
-    padding-right: 40px;
-  }
-  h1 {
-    color: white;
-    font-family: 'Nobile', sans-serif;
-    font-size: 7vw;
-    text-align: center;
-  }
-  
-  #video-bg {
-    position: relative;
-    width: auto;
-    min-width: 100%;
-    height: auto;
-    background-size: cover;
-  }
-  
-  .video-container {
-    width: 100%;
-    max-height: 90vh; /*altura del video*/
-    overflow: hidden;
-    position: relative;
-  }
+#slider{
+  height: 90vh;
+  max-height: 90vh;
+  background-color: lightblue;
+  position: relative;
 }
 
-/* Pantalla pequeña */
-@media screen and (max-width: 720px) {
-  h1 {
-    display: none;
-  }
-  
-  #video-bg {
-    display: none;
-  }
-  
-  .video-container {
-    display: none;
-  }
+img {
+  width:100%;
+  height:90vh;
 }

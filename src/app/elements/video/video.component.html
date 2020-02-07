@@ -1,5 +1,5 @@
 <!--https://stackoverflow.com/questions/29817002/background-video-with-100-width-and-fixed-height-->
-
+<!--
 <div class="video-container">
   <video autoplay loop muted id="video-bg">
     <source [src]="'assets/media/video.mp4'" type="video/webm" />
@@ -9,4 +9,36 @@
     <p>Diseñamos</p>
     <h1><span id="spin"></span></h1>
   </div>
+</div>
+-->
+<div>
+  <ngb-carousel id="slider">
+    <ng-template ngbSlide>
+      <div class="">
+        <img src="https://robovent.com/es/wp-content/uploads/blue-AutomotiveCalc_2018-background.jpg" alt="1">
+      </div>
+      <div class="carousel-caption">
+        <h3>First slide label</h3>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="https://images6.alphacoders.com/994/thumb-1920-994203.jpg" alt="2">
+      </div>
+      <div class="carousel-caption">
+        <h3>Second slide label</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img src="https://cdn.wallpapersafari.com/35/62/a9MsHW.jpg" alt="1">
+      </div>
+      <div class="carousel-caption">
+        <h3>Third slide label</h3>
+        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+      </div>
+    </ng-template>
+  </ngb-carousel>
 </div>

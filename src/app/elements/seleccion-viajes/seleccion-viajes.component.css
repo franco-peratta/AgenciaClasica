@@ -1,33 +1,19 @@
-img {
-	width: 100%;
-	height: 100%;
-	vertical-align: middle;
-  }
+mat-card {
+	margin-bottom: 5vh;
+}
+
 img:hover {
     cursor: pointer;
 }
-  
-.pics_in_a_row {
-	display: flex;
-}
-  
-.my_img { 
-	flex: 1.3344;
+
+.destacados {
+	padding-left: 10vw;
+	padding-right: 10vw;
 }
 
-*, *:before, *:after {
-	box-sizing: border-box;
-}
-  
-.container {
-	background: white;
-	margin: 0 auto;
-	padding: 0%;
-	width: 75%;
-}
-
-.precio{
-	color: #110c0cb2;
+.precio {
+	color: black;
+	font-size: 24px;
 }
   
 #titulo {
@@ -36,69 +22,33 @@ img:hover {
 	margin-top: 20px;
 	margin-bottom: 60px;
 }
-  
-h2 {
-	font-weight: normal;
-	font-size: 19px;
-	margin-bottom: 30px;
-}
-  
-.muted {
-	font-style: italic;
-	color: #666;
+
+.titulo-card {
+	margin-top:auto;
+    margin-bottom:auto;
+    text-align:left;
 }
 
-p {
-	color: white;
-	padding-left: 2px;
-}
-
-p, li {
-	line-height: 1.5
-}
-  
-li {
-	margin-bottom: 7px;
-}
-    
-.pics_in_a_row {
-	margin: 25px 0;
-}
-  
-.pics_in_a_row > div:not(:last-child) {
-	margin-right: 2%;
-}  
-
-figcaption{
-	background-color:#000e33;
-	color: white;
+mat-card{
 	cursor: pointer;
-	font-size: 16px;
 }
 
-.btn {
-	color: black;
-}
-@media screen and (min-width: 831px) {
-	.btn-primary {
-		color: rgb(255, 255, 255);
-		float: right; 
-		margin-top:8px
-	}
-}
-@media screen and (max-width: 830px) {	
-	.btn-primary {
-		display: none;
-	}
+.btn-primary {
+	color: rgb(255, 255, 255);
+	float: right; 
 }
 
 /*https://codepen.io/nxworld/pen/ZYNOBZ*/
 /* Opacity #2 */
-.hover12 figure img {
+.hover figure img {
 	opacity: 1;
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
 }
-.hover12 figure:hover img {
+.hover figure:hover img {
 	opacity: .8;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }

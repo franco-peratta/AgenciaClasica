@@ -3,19 +3,21 @@
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 .navbar{
-    background-color: #000e33 !important;
-    max-height: 80px;
-}
-
-.navbar-toggler {
-  color: white;
+    /*background-color: lightgray !important;*/
+    max-height: 20vh;
 }
 
 nav .navbar-nav li a{
-  color: #ffffff;
+  color: black  ;
 }
 
-/* stroke: underline on hover */
+.navbar-toggler-icon{
+  color: white;
+}
+.navbar-toggler{
+  color: white;
+}
+
 nav.stroke ul li a,
 nav.fill ul li a {
   position: relative;
@@ -59,28 +61,26 @@ nav.fill ul li a:hover:after {
   opacity: 1;
 }
 
-/*Icons*/
+/* ICONS NAVBAR */
 .navbar-icon-top .navbar-nav .nav-link > .fa {
   position: relative;
   width: 36px;
   font-size: 24px;
 }
-
 .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
   font-size: 0.75rem;
   position: absolute;
   right: 0;
   font-family: sans-serif;
 }
-
 .navbar-icon-top .navbar-nav .nav-link > .fa {
   top: 3px;
   line-height: 12px;
 }
-
 .navbar-icon-top .navbar-nav .nav-link > .fa > .badge {
   top: -10px;
 }
+
 @media (min-width: 576px) {
   .navbar-icon-top.navbar-expand-sm .navbar-nav .nav-link {
     text-align: center;
@@ -171,4 +171,8 @@ nav.fill ul li a:hover:after {
   .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
     top: -7px;
   }
+}
+
+.bg-custom {
+  background-image: linear-gradient(15deg, #8f8c9b 0%, #c7e0dd 100%);
 }

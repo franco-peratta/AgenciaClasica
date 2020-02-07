@@ -1,43 +1,29 @@
 <app-video></app-video>
-
-<br><br>
+<br>
+<br>
 <p id="titulo" align="center">PROGRAMAS DISEÑADOS A LA MEDIDA DE TUS SUEÑOS</p>
 
-<div class="container" *ngFor='let index of viajes; let i = index; let even = even; let size = count'>
-  <span *ngIf="even">
-    <div class='pics_in_a_row'>
-      <div class='my_img rounded hover12'>
-        <figure><img routerLink='programas/{{viajes[i].id}}' src={{viajes[i].portada}}>
-          <figcaption routerLink='programas/{{viajes[i].id}}'>
-            <div>
-              <p>{{viajes[i].nombre}}</p>
-            </div>
-          </figcaption>
-          <div class="precio">
-            <button routerLink='programas/{{viajes[i].id}}' type="button" class="btn btn-primary">
-              <i class="fa fa-paper-plane"></i> Ampliar
-            </button>
-            <i class="fa fa-money" style="margin-top:10px"></i> Precio: <br>
-            {{viajes[i].precio}}
-          </div>
-        </figure>
-      </div>
-      <div class='my_img rounded hover12'>
-        <figure *ngIf="i+1<size"><img routerLink='programas/{{viajes[i+1].id}}' src={{viajes[i+1].portada}}>
-          <figcaption routerLink='programas/{{viajes[i+1].id}}'>
-            <div>
-              <p>{{viajes[i+1].nombre}}</p>
-            </div>
-          </figcaption>
-          <div class="precio">
-            <button routerLink='programas/{{viajes[i+1].id}}' type="button" class="btn btn-primary">
-              <i class="fa fa-paper-plane"></i> Ampliar
-            </button>
-            <i class="fa fa-money" style="margin-top:10px"></i> Precio: <br>
-            {{viajes[i+1].precio}}
-          </div>
-        </figure>
-      </div>
+<div class="destacados">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" *ngFor="let viaje of viajes; index as i;">
+      <mat-card class="card mat-elevation-z8">
+        <mat-card-header>
+          <mat-card-title>{{viaje.nombre}}</mat-card-title>
+          <mat-card-subtitle>{{viaje.nombre}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]=viaje.portada alt="Photo of Rome">
+        <mat-card-content>
+          <p class="precio">
+            <i class="fa fa-money"></i> Precio:
+            <br> {{viajes[i].precio}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button routerLink='programas/{{viaje.id}}' type="button" class="btn btn-primary">
+            <i class="fa fa-paper-plane"></i> Ampliar
+          </button>
+        </mat-card-actions>
+      </mat-card>
     </div>
-  </span>
+  </div>
 </div>

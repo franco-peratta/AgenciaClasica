@@ -29,6 +29,10 @@ import { CoreModule } from './core/core.module';
 import { LoginComponent } from './elements/login/login.component';
 import { AuthGuard } from './services/auth.guard';
 import { NotfoundComponent } from './elements/notfound/notfound.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatCardModule } from '@angular/material/card'
+import { MatIconModule } from '@angular/material/icon'
 
 @NgModule({
   declarations: [
@@ -57,6 +61,9 @@ import { NotfoundComponent } from './elements/notfound/notfound.component';
     FormsModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
