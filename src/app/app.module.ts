@@ -32,7 +32,7 @@ import { NotfoundComponent } from './elements/notfound/notfound.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatCardModule } from '@angular/material/card'
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
