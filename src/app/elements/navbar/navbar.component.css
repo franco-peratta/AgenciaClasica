@@ -184,7 +184,7 @@ nav.fill ul li a:hover:after {
 }
 
 .bg-custom {
-  background-image: linear-gradient(15deg, lightgray 0%, white 100%);
+  background-image: linear-gradient(15deg, rgb(210,210,210) 0%, rgb(240,240,240) 100%);
 }
 
 a {
