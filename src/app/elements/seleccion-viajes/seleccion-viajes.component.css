@@ -37,14 +37,15 @@ mat-card{
 }
 
 #banner {
+	margin-top: 10vh;
 	margin-bottom: 50px;
 	overflow: hidden;
 	width: 100%;
-	height: 100vh;
+	height: 80vh;
 	position: relative;
 	clear: both;
 	background: transparent center center no-repeat fixed;
-	background-image: url("/assets/media/newyork3.jpg");
+	background-image: url("/assets/media/newyork4.jpg");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -52,29 +53,16 @@ mat-card{
 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://wallpapercave.com/wp/wp2205954.jpg',sizingMethod='scale');
 	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://wallpapercave.com/wp/wp2205954.jpg',sizingMethod='scale')";
 }
-  
-.wrap-center{
-	margin: 0 auto;
-	position: relative;
-	max-width: 73.231em;
-}
-  
-.banner-centered {
-	text-align: center;
+
+/* Centered text */
+.centered {
 	position: absolute;
-	display: block;
-	max-width: 75.231em;
-	height: inherit;
-	overflow: hidden;
-	margin-top: 100px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: whitesmoke;
 }
 
-.banner-centered h2 {
-	font-size: 5.385em;
-	line-height: 1.5;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	color: #fafafa;
-	font-weight: 100;
-	display: block;
+.destacado_mes {
+	font-size: 4vh;
 }

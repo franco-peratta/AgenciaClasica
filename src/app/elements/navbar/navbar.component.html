@@ -1,14 +1,14 @@
-<nav class="navbar navbar-light navbar-expand-lg static-top navbar-icon-top stroke bg-custom">
+<nav class="navbar navbar-light navbar-expand-lg static-top navbar-icon-top">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">
       <img class="nav-logo" [src]="'assets/media/LOGO_CORTADO.png'" alt="">
     </a>
-    <button class="navbar-toggler" type="button" (click)='collapse = !collapse'
+    <button class="navbar-toggler" type="button" (click)='collapse = !collapse;'
       data-target="#navbarsDefault" aria-controls="navbarsDefault" 
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div [ngbCollapse]="collapse" class="collapse navbar-collapse" id="navbarsDefault">
+    <div [ngbCollapse]="collapse" class="container-fluid collapse navbar-collapse" id="navbarsDefault">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
           <a routerLink="" class="nav-link">

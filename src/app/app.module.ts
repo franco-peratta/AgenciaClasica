@@ -33,6 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatCardModule } from '@angular/material/card'
 import { MatIconModule } from '@angular/material/icon';
+import { FooterComponent } from './elements/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MatIconModule } from '@angular/material/icon';
     SearchPipe,
     LoginComponent,
     NotfoundComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

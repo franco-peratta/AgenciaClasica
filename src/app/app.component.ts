@@ -22,16 +22,13 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.titleService.setTitle(this.title);
 
-    this.auth.getUser().subscribe( asd => {
-      if(asd!==null){
+    this.auth.getUser().subscribe( user => {
+      if(user!==null){
         this.logged=true;
       }
       else{
         this.logged = false;
       }
     });
-
   }
-
-
 }

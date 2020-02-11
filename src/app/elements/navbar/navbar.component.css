@@ -2,13 +2,19 @@
 
 @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
-#navbarsDefault{
+.navbar-collapse{
   position: relative;
   z-index: 100;
+  background-image: linear-gradient(15deg, rgb(210,210,210) 0%, rgb(240,240,240) 100%);
+}
+
+#navbarsDefault {
+  width: 100vw;
 }
 
 .navbar{
     height: 10vh;
+    background-image: linear-gradient(15deg, rgb(210,210,210) 0%, rgb(240,240,240) 100%);
 }
 
 .nav-logo{
@@ -181,10 +187,6 @@ nav.fill ul li a:hover:after {
   .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
     top: -7px;
   }
-}
-
-.bg-custom {
-  background-image: linear-gradient(15deg, rgb(210,210,210) 0%, rgb(240,240,240) 100%);
 }
 
 a {

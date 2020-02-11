@@ -1,27 +1,4 @@
 @charset "utf-8";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700,800,900');
-
-body {
-	font-family: 'Montserrat', sans-serif;
-}
-
-.footer {
-	margin-top: 100px;
-	background-color: #efefef;
-	color: white;
-	text-align: center;
-	background-image: url(src/assets/media/footer2.png);
-	/*background-color: #000e33;*/
-	width: 100%;
-	height: 37vh;
-}
-
-a + a {
-    margin-left: 20px;
-}
-i {
-	color: white;
-}
 
 .log-alert{
 	margin: 0 0 0 0;
