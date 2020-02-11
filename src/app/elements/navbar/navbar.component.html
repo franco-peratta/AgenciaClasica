@@ -1,51 +1,50 @@
-<nav class="navbar navbar-light navbar-expand-lg static-top navbar-icon-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="">
-      <img class="nav-logo" [src]="'assets/media/LOGO_CORTADO.png'" alt="">
-    </a>
-    <button class="navbar-toggler" type="button" (click)='collapse = !collapse;'
-      data-target="#navbarsDefault" aria-controls="navbarsDefault" 
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div [ngbCollapse]="collapse" class="container-fluid collapse navbar-collapse" id="navbarsDefault">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a routerLink="" class="nav-link">
-            <i class="fa fa-home"></i>
-            Home
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a routerLink="programas" class="nav-link">
-            <i class="fa fa-plane"></i>
-            Programas
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a routerLink="circuitos_europeos" class="nav-link">
-            <i class="fa fa-eur" aria-hidden="true"></i>
-            Circuitos europeos
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a routerLink="about" class="nav-link">
-            <i class="fa fa-info"></i>
-            Informacion
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item active">
-          <a routerLink="contacto" class="nav-link">
-            <i class="fa fa-envelope"></i>
-            Contacto
-            <span class="sr-only">(current)</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top stroke">
+
+  <a class="navbar-brand" routerLink="">
+    <img (click)="change_active_nav($event)" class="navbar-logo" id="nav0" [src]="'assets/media/LOGO_CORTADO.png'" alt="">
+  </a>
+
+  <button class="navbar-toggler" type="button" (click)="collapse=!collapse;" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div [ngbCollapse]="collapse" class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item" id="nav1" (click)="change_active_nav($event)">
+        <a routerLink="" class="nav-link">
+          <i class="fa fa-home"></i>
+          Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" id="nav2" (click)="change_active_nav($event)">
+        <a routerLink="programas" class="nav-link">
+          <i class="fa fa-plane"></i>
+          Programas
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" id="nav3" (click)="change_active_nav($event)">
+        <a routerLink="circuitos_europeos" class="nav-link">
+          <i class="fa fa-eur" aria-hidden="true"></i>
+          Circuitos europeos
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" id="nav4" (click)="change_active_nav($event)">
+        <a routerLink="about" class="nav-link">
+          <i class="fa fa-info"></i>
+          Informacion
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" id="nav5" (click)="change_active_nav($event)">
+        <a routerLink="contacto" class="nav-link">
+          <i class="fa fa-envelope"></i>
+          Contacto
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
   </div>
 </nav>

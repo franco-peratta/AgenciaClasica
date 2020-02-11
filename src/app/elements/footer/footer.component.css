@@ -12,6 +12,10 @@
 a + a {
     margin-left: 20px;
 }
+
 i {
 	color: white;
+}
+.log-alert{
+	margin: 0 0 0 0;
 }

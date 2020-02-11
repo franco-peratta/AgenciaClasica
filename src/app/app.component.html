@@ -11,14 +11,17 @@
 </head>
 
 <body>
+  
+  <!-- NAVBAR -->
   <app-navbar></app-navbar>
-  <div>
-    <div *ngIf="logged"  class="alert alert-primary log-alert" role="alert">
-      Logueado como: xD
-    </div>
-    <router-outlet></router-outlet>
-  </div>
 
+  <!-- BODY dinamico -->
+  <div *ngIf="logged" class="alert alert-primary log-alert" role="alert">
+    Logueado como: xD
+  </div>
+  <router-outlet></router-outlet>
+
+  <!-- FOOTER -->
   <app-footer></app-footer>
 
 </body>
