@@ -1,55 +1,34 @@
-<div class="container-fluid">
-    <br>
-    <h2 align="center">Programas diseñados para vos</h2><br>
-    <form class="form-horizontal inner" [formGroup]="filter" novalidate>
-        <p>Búsqueda: </p><input type="text" class="form-control" formControlName="inputText"
-            placeholder="Ingrese nombre del programa o el destino deseado">
-        <br>
+<div class="titulo">
+    <h2 align="center">Programas diseñados para vos</h2>
+    <form class="container" [formGroup]="filter" novalidate>
+        <p>Búsqueda: </p>
+        <input type="text" class="form-control" formControlName="inputText" placeholder="Ingrese nombre del programa o el destino deseado">
     </form>
-    <br>
+    <div class="row full-height">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4" *ngFor="let viaje of viajes | search :filter.get('inputText').value">
+            <mat-card class="card mat-elevation-z8" routerLink='{{viaje.id}}'>
 
-    <!--https://getbootstrap.com/docs/4.0/content/tables/-->
-    <!--
-    <table class="table table-border" *ngIf="viajes">
-        <tr>
-            <th></th>
-            <th class="border">Nombre</th>
-            <th class="border">Destino</th>
-            <th class="border">Duracion</th>
-            <th class="border">Precio</th>
-            <th></th>
-        </tr>
-        <tr *ngFor="let index of viajes | search :filter.get('inputText').value">
-            <td class="border">
-                <img routerLink='' src='{{index.portada}}' height="100px" width="100px">
-            </td>
-            <td class="border">{{index.nombre}}</td>
-            <td class="border">{{index.destino}}</td>
-            <td class="border">{{index.duracion}}</td>
-            <td class="border">{{index.precio}}</td>
-            <td align="center"><a class="btn-sm btn-info" routerLink="{{index.id}}">Select</a></td>
-        </tr>
-        <tr></tr>
-    </table>-->
+                <mat-card-title class="text-oneline">
+                    {{viaje.nombre}}
+                </mat-card-title>
+                <mat-card-subtitle>{{viaje.nombre}}</mat-card-subtitle>
 
-    <div class="container-fluid inner full-height">
-        <div class="card" *ngFor="let index of viajes | search :filter.get('inputText').value">
-            <div class="row ">
-                <div class="col-md-3">
-                    <img src={{index.portada}} height="100%" width="100%">
-                </div>
-                <div class="col-md-9">
-                    <div class="card-block" style="margin-top: 10px">
-                        <h4 class="card-title">{{index.nombre}}</h4>
-                        <p><i class="fa fa-calendar"></i><b> Duracion: </b> {{index.duracion}}</p>
-                        <p><i class="fa fa-location-arrow"></i><b> Destino/s: </b> {{index.destino}}</p>
-                        <p><i class="fa fa-money"></i><b> Precio: </b> {{index.precio}}</p>
-                        <a routerLink={{index.id}} class="btn btn-primary"
-                            style="position:absolute; bottom:0; right:0; margin-right:30px; margin-bottom: 10px;">Ver
-                            más</a>
-                    </div>
-                </div>
-            </div>
+                <img mat-card-image [src]=viaje.portada alt="">
+                <mat-card-content>
+                    <p class="text-oneline">
+                        <i class="fa fa-calendar"></i>
+                        <b> Duracion: </b> {{viaje.duracion}}</p>
+                    <p class="text-oneline">
+                        <i class="fa fa-location-arrow"></i>
+                        <b> Destino/s: </b> {{viaje.destino}}</p>
+                    <p class="text-oneline">
+                        <i class="fa fa-money"></i>
+                        <b> Precio: </b> {{viaje.precio}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                </mat-card-actions>
+            </mat-card>
         </div>
     </div>
 </div>

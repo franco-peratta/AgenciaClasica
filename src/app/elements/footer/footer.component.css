@@ -15,6 +15,7 @@ a + a {
 
 i {
 	color: white;
+	cursor: pointer;
 }
 .log-alert{
 	margin: 0 0 0 0;

@@ -1,13 +1,37 @@
-.card + .card {
-  margin-top: 34px;
-}
-
-.inner {
-  width: 75%;
-  margin: 0 auto;
-  margin-top: 30px;
+.titulo {
+  margin-top: 5vh;
 }
 
 .full-height {
-  min-height: 80vh;
+  min-height: 60vh;
+}
+
+.row {
+  margin-top: 5vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+mat-card {
+  margin-bottom: 5vh;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+.precio {
+  color: black;
+  font-size: 20px;
+}
+
+.text-oneline {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }

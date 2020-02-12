@@ -6,7 +6,7 @@
 <div class="destacados">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" *ngFor="let viaje of viajes; index as i;">
-      <mat-card class="card mat-elevation-z8">
+      <mat-card routerLink='programas/{{viaje.id}}' class="card mat-elevation-z8">
         <mat-card-header>
           <mat-card-title>{{viaje.nombre}}</mat-card-title>
           <mat-card-subtitle>{{viaje.nombre}}</mat-card-subtitle>
@@ -19,9 +19,6 @@
           </p>
         </mat-card-content>
         <mat-card-actions>
-          <button routerLink='programas/{{viaje.id}}' type="button" class="btn btn-primary">
-            <i class="fa fa-paper-plane"></i> Ampliar
-          </button>
         </mat-card-actions>
       </mat-card>
     </div>

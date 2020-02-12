@@ -152,7 +152,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
   toggle_form() {
     if (document.getElementById("form_div").style.display === "none") {
       document.getElementById('form_div').style.display = "block";
-      document.getElementById('boton_reserva').style.display = "none";
+      document.getElementById('btn_reserva').style.display = "none";
       window.scrollBy(0, 100); // Scroll 100px down
     }
     else {

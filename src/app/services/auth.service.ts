@@ -35,7 +35,7 @@ export class AuthService {
         this.router.navigate(['/admin']);
       })
       .catch(err => {
-        alert("Email o password inválido");
+        alert(err);
       });
   }
 

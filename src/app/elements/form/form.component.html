@@ -1,10 +1,13 @@
 <div class="inner">
   <p></p>
-  <button (click)=logOut() type="button" class="btn btn-primary">Log out</button>
+  <button (click)=logOut() type="button" class="btn btn-info">Log out</button>
 
   <br>
   <hr>
-  <h2>Mensajes</h2>
+  <h2>
+    Mensajes
+    <span *ngIf="mensajes !== null" class="badge badge-info">{{mensajes.length}}</span>
+  </h2>
   <div class="list-group" id="lista_mensajes">
     <a class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let index of mensajes">
       <div class="d-flex w-100 justify-content-between">
@@ -23,10 +26,14 @@
   </div>
 
   <br>
-  <hr><br>
+  <hr>
+  <br>
 
   <button class="accordion border" (click)=toggleABM()>
-    <b>Agregar programa</b><span style="float:right;"><i id="iconABM" class="fa fa-angle-down"></i></span>
+    <b>Agregar programa</b>
+    <span style="float:right;">
+      <i id="iconABM" class="fa fa-angle-down"></i>
+    </span>
   </button>
   <div class="panel-invi" id="formulario1">
     <form [formGroup]="formdb" (ngSubmit)="saveViaje()">
@@ -34,48 +41,36 @@
         Nombre del programa
         <br>
         <input type="text" name="nombre" class="form-control" formControlName="nombre">
-        <br>
-        Destino
+        <br> Destino
         <br>
         <input type="text" name="destino" class="form-control" formControlName="destino">
+        <br> Duracion
         <br>
-        Duracion
+        <input type="text" name="duracion" class="form-control" formControlName="duracion">
+        <br> Precio
         <br>
-        <input type="text" name="duracion" class="form-control" formControlName="duracion"><br>
-        Precio
-        <br>
-        <input type="text" name="precio" class="form-control" placeholder="Indicar la concurrencia (USD, $, etc)"
-          formControlName="precio"><br>
-        Descripcion
+        <input type="text" name="precio" class="form-control" placeholder="Indicar la concurrencia (USD, $, etc)" formControlName="precio">
+        <br> Descripcion
         <br>
         <textarea id="descripcion" class="form-control" formControlName="descripcion"></textarea>
+        <br> Observacion
         <br>
-        Observacion
+        <textarea id="obs" class="form-control" formControlName="obs" placeholder="Insertar código HTML aquí"></textarea>
+        <br> Itinerario
         <br>
-        <textarea id="obs" class="form-control" formControlName="obs"
-          placeholder="Insertar código HTML aquí"></textarea>
-        <br>
-        Itinerario
-        <br>
-        <textarea id="itinerario" class="form-control" formControlName="itinerario"
-          placeholder="Insertar código HTML aquí"></textarea>
-        <br>
-        Portada
+        <textarea id="itinerario" class="form-control" formControlName="itinerario" placeholder="Insertar código HTML aquí"></textarea>
+        <br> Portada
         <input type="text" name="portada" class="form-control" formControlName="portada">
-        <br>
-        Foto1
+        <br> Foto1
         <br>
         <input type="text" name="foto1" class="form-control" formControlName="foto1">
-        <br>
-        Foto2
+        <br> Foto2
         <br>
         <input type="text" name="foto2" class="form-control" formControlName="foto2">
-        <br>
-        Foto3
+        <br> Foto3
         <br>
         <input type="text" name="foto3" class="form-control" formControlName="foto3">
-        <br>
-        Destacado
+        <br> Destacado
         <input type="checkbox" name="destacado" class="form-control" formControlName="destacado">
         <br>
         <button class="btn btn-primary" [disabled]="formdb.invalid">Save</button>
@@ -84,13 +79,16 @@
   </div>
   <hr>
   <button class="accordion border" (click)=toggleEdit()>
-    <b>Editar programa</b><span style="float:right;"><i id="iconEdit" class="fa fa-angle-down"></i></span>
+    <b>Editar programa</b>
+    <span style="float:right;">
+      <i id="iconEdit" class="fa fa-angle-down"></i>
+    </span>
   </button>
   <div class="panel-invi" id="formulario2">
 
     <div class="form-group">
       <label for="viaje">Seleccione el programa a editar</label>
-      <select id="select" name="select" class="form-control" (click)="cargarViajeAEditar()"> 
+      <select id="select" name="select" class="form-control" (click)="cargarViajeAEditar()">
         <option value="" disabled>
           Programas
         </option>
@@ -106,22 +104,19 @@
         Nombre del programa
         <br>
         <input type="text" class="form-control" name="nombre" id="nombre">
-        <br>
-        Destino
+        <br> Destino
         <br>
         <input type="text" class="form-control" name="destino" id="destino">
+        <br> Duracion
         <br>
-        Duracion
+        <input type="text" class="form-control" name="duracion" id="duracion">
+        <br> Precio
         <br>
-        <input type="text" class="form-control" name="duracion" id="duracion"><br>
-        Precio
+        <input type="text" name="precio" id="precio" class="form-control">
         <br>
-        <input type="text" name="precio" id="precio" class="form-control"><br>
-        <br>
-        Portada
+        <br> Portada
         <input type="text" class="form-control" name="portada" id="portada">
-        <br>
-        Destacado
+        <br> Destacado
         <input type="checkbox" name="destacado" class="form-control" id="destacado">
         <br>
         <button id="edit_button" (click)=editViaje() class="btn btn-primary" disabled>Edit</button>

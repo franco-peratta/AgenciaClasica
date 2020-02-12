@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
     }
     else {
       document.getElementById(id).classList.add("active");
+      this.collapse = !this.collapse;
     }
-    this.collapse = !this.collapse;
   }
 }

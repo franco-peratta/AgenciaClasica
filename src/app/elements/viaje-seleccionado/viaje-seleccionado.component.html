@@ -22,38 +22,42 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                 </ngb-carousel>
             </div>
 
-            <br><br>
+            <br>
+            <br>
 
             <div *ngIf="viaje" class="border" id="panel_detalles">
-                <p><i class="fa fa-calendar"></i><b> Duracion: </b> {{viaje.duracion}}</p>
-                <button type="button" id="boton_reserva" class="btn btn-primary"
-                    style="float: right; margin-right: 10px;" (click)=toggle_form()>Reservar</button>
-                <p><i class="fa fa-location-arrow"></i><b> Destino/s: </b> {{viaje.destino}}</p>
-                <p><i class="fa fa-money"></i><b> Precio: </b> {{viaje.precio}}</p>
+                <p>
+                    <i class="fa fa-calendar"></i>
+                    <b> Duracion: </b> {{viaje.duracion}}</p>
+                <p>
+                    <i class="fa fa-location-arrow"></i>
+                    <b> Destino/s: </b> {{viaje.destino}}</p>
+                <p>
+                    <i class="fa fa-money"></i>
+                    <b> Precio: </b> {{viaje.precio}}
+                </p>
+                <button type="button" class="btn btn-primary" (click)=toggle_form() id="btn-reserva">Reservar</button>
             </div>
 
             <br>
             <div id="form_div" style="display: none">
                 <br>
-                <hr><br>
+                <hr>
+                <br>
                 <form [formGroup]="form" (ngSubmit)="send_message()">
                     <div class="form-group">
                         Nombre y Apellido *
                         <br>
                         <input type="text" name="nombre" class="form-control" formControlName="nombre">
-                        <br>
-                        E-mail *
+                        <br> E-mail *
                         <br>
                         <input type="text" name="mail" class="form-control" formControlName="mail">
-                        <br>
-                        Mensaje y observaciones (opcional)
-                        <textarea id="mensaje" class="form-control" formControlName="mensaje"
-                            placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
+                        <br> Mensaje y observaciones (opcional)
+                        <textarea id="mensaje" class="form-control" formControlName="mensaje" placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
                         <br>
                         <!--Captcha-->
                         <!--https://www.npmjs.com/package/ng-recaptcha-->
-                        <re-captcha formControlName="recaptchaReactive"
-                            siteKey="6Lfp75YUAAAAADKD8ILWr9D-opHVYV8B3celWq0e"></re-captcha>
+                        <re-captcha formControlName="recaptchaReactive" siteKey="6Lfp75YUAAAAADKD8ILWr9D-opHVYV8B3celWq0e"></re-captcha>
                         <br>
                         <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
                     </div>
@@ -73,15 +77,19 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                 <h1 align="center">Detalles</h1>
                 <br>
                 <button class="accordion border" (click)=toggleItinerario()>
-                    <b>Itinerario</b><span style="float:right;"><i id="icon_itinerario"
-                            class="fa fa-angle-down"></i></span>
+                    <b>Itinerario</b>
+                    <span style="float:right;">
+                        <i id="icon_itinerario" class="fa fa-angle-down"></i>
+                    </span>
                 </button>
                 <div class="panel-invi border" id="itinerario">
                 </div>
                 <br>
                 <button class="accordion" (click)=toggleObs() style="margin-top: 10px">
-                    <b>Observaciones</b><span style="float:right;"><i id="icon_observaciones"
-                            class="fa fa-angle-down"></i></span>
+                    <b>Observaciones</b>
+                    <span style="float:right;">
+                        <i id="icon_observaciones" class="fa fa-angle-down"></i>
+                    </span>
                 </button>
                 <div class="panel-invi border" id="observaciones">
                 </div>
@@ -107,8 +115,7 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
             <h2>Ofertas mas recientes</h2>
             <hr>
             <!--OFERTAS-->
-            <div class="container py-3 oferta border" *ngFor='let index of ofertas; let i = index'
-                (click)=reloadWithDifferentId()>
+            <div class="container py-3 oferta border" *ngFor='let index of ofertas; let i = index' (click)=reloadWithDifferentId()>
                 <div routerLink='../../programas/{{index.id}}' class="row ">
                     <div class="col-md-4">
                         <img src={{index.portada}} class="w-100 border">
