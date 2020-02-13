@@ -11,10 +11,10 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    this.collapse = true;
+  ngOnInit() {    
     // Seteo Home como nav activo
     document.getElementById('nav1').classList.add("active");
+    this.collapse = true;
   }
 
   change_active_nav(event: any) {

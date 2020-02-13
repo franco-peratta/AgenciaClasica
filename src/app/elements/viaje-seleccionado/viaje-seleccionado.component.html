@@ -6,9 +6,8 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
 -->
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-7">
-            <h2 *ngIf="viaje" align="center" style="margin-top: 30px">{{viaje.nombre}}</h2>
+        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+            <h2 *ngIf="viaje" align="center">{{viaje.nombre}}</h2>
             <hr>
             <div>
                 <ngb-carousel>
@@ -71,8 +70,6 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                     {{viaje?.descripcion}}
                 </blockquote>
             </div>
-
-            <hr>
             <div>
                 <h1 align="center">Detalles</h1>
                 <br>
@@ -97,37 +94,45 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
 
             <hr>
             <div align="center" id="share-buttons">
-                <!-- Facebook -->
+                <!--
+                <!- - Facebook - ->
                 <a class="clickable" (click)="shareFacebook()" target="_blank">
                     <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
                 </a>
-                <!-- Twitter -->
+                <!- - Twitter - ->
                 <a class="clickable" (click)="shareTwitter()" target="_blank">
                     <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
                 </a>
-                <!-- Google+ - ->
+                <!- - Google+ - ->
                 <a class="clickable" (click)="shareGoogle()" target="_blank">
                     <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
                 </a>-->
             </div>
         </div>
-        <div class="col-sm-4" style="text-align:center;margin-top:30px;">
-            <h2>Ofertas mas recientes</h2>
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+            <h2 align="center">Más recientes</h2>
             <hr>
-            <!--OFERTAS-->
-            <div class="container py-3 oferta border" *ngFor='let index of ofertas; let i = index' (click)=reloadWithDifferentId()>
-                <div routerLink='../../programas/{{index.id}}' class="row ">
-                    <div class="col-md-4">
-                        <img src={{index.portada}} class="w-100 border">
-                    </div>
-                    <div class="col-md-8 px-3">
-                        <div class="card-block px-3">
-                            <h6 class="card-title">{{index.nombre}}</h6>
-                            <p class="card-text">Desde: {{index.precio}}</p>
+            <!-- Más recientes-->
+            <div class="card mb-3" *ngFor='let oferta of ofertas;'>
+                <div class="oferta row no-gutters" (click)='reloadWithDifferentId(oferta)'>                    
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <h5 class="card-title">{{oferta.nombre}}</h5>
+                            <p class="card-text text-oneline">
+                                <i class="fa fa-calendar"></i>
+                                <b> Duracion: </b> {{oferta.duracion}}</p>
+                            <p class="card-text text-oneline">
+                                <i class="fa fa-location-arrow"></i>
+                                <b> Destino/s: </b> {{oferta.destino}}</p>
+                            <p class="card-text text-oneline">
+                                <i class="fa fa-money"></i>
+                                <b> Precio: </b> {{oferta.precio}}
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

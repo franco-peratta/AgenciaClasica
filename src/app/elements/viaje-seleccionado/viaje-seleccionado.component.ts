@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViajesService } from 'src/app/services/viajes-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { ViajesViewModel } from 'src/app/models/viajes-view-model';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -24,9 +24,11 @@ export class ViajeSeleccionadoComponent implements OnInit {
   constructor(
     private viajesService: ViajesService,
     private route: ActivatedRoute,
-    config: NgbCarouselConfig,
+    private config: NgbCarouselConfig,
     private formBuilder: FormBuilder,
-    private mensajes_service: MessagesService) {
+    private mensajes_service: MessagesService,
+    private router: Router
+  ) {
     config.interval = 3000;
     config.wrap = true;
     config.showNavigationArrows = true;
@@ -40,6 +42,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.id = params.get("id");
     });
+
     this.loadViaje();
     this.loadOfertas();
 
@@ -72,6 +75,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
       };
       this.viaje = viaje_obj;
 
+      this.images = [];
       this.images.push(viaje_obj.portada);
       for (let entry of viaje_obj.fotos) { //of me da el contenido dentro del indice (entry: fotos[i])
         this.images.push(entry);
@@ -144,16 +148,20 @@ export class ViajeSeleccionadoComponent implements OnInit {
     });
   }
 
-  //ARREGLAR ESTA BARBARIDAD
-  reloadWithDifferentId() {
-    window.location.reload();
+  // Engaño al router para que refresque el componente en cada routerLink
+  // https://github.com/angular/angular/issues/13831
+  reloadWithDifferentId(oferta) {
+    this.router.navigate(['../../programas/' + oferta.id]);
+    if (this.id !== oferta.id) {
+      this.id = oferta.id;
+      this.loadViaje();
+    }
   }
 
   toggle_form() {
     if (document.getElementById("form_div").style.display === "none") {
       document.getElementById('form_div').style.display = "block";
       document.getElementById('btn_reserva').style.display = "none";
-      window.scrollBy(0, 100); // Scroll 100px down
     }
     else {
       document.getElementById('form_div').style.display = "none";

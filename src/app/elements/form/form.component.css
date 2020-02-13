@@ -37,3 +37,8 @@ a + a {
 #delete_button {
   margin-left: 15px;
 }
+
+.trash {
+  float: right; 
+  cursor: pointer;
+}

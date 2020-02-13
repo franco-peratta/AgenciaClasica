@@ -16,12 +16,9 @@
       </div>
       <p class="mb-1">{{index.mensaje}}</p>
       <small>{{index.mail}}</small>
-      <a style="float: right; cursor: pointer" (click)=borrarMensaje(index)>
-        <i class="fa fa-trash fa-2x"></i>
+      <a class="trash" (click)=borrarMensaje(index)>
+        <i class="fa fa-trash-o fa-2x"></i>
       </a>
-      <!--<a style="float: right; cursor: pointer" (click)=marcarComoLeido(index)>
-        <i class="fa fa-eye fa-2x"></i>
-      </a>-->
     </a>
   </div>
 
