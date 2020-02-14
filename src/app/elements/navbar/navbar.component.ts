@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -28,12 +28,12 @@ export class NavbarComponent implements OnInit {
 
     if (isLogo) {
       document.getElementById('nav1').classList.add("active");
-      console.log("home");
+      console.log("es logo");
     }
     else {
-
-      let url: string = this.router.url;
-
+      // Obtengo url
+      let url: string = window.location.pathname;
+      // Marco como activo el nav correcto, dependiendo del url
       switch (url) {
         case "/": {
           document.getElementById('nav1').classList.add("active");
@@ -58,10 +58,6 @@ export class NavbarComponent implements OnInit {
         case "/contacto": {
           document.getElementById('nav5').classList.add("active");
           console.log("contacto");
-          break;
-        }
-        default: {
-          console.log("NADA DE NADA");
           break;
         }
       }
