@@ -12,25 +12,32 @@
 
 .card {
 	margin-bottom: 5vh;
-	cursor: pointer;
+	cursor: pointer;	
 }
 
 .card:hover {
 	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.card:hover img {
-	opacity: 1;
+/* Efecto Gray Scale */
+.hover08 {
+	margin-top: 2vh;
 }
 
-img {
-	opacity: 0.85;
-	transition: opacity .4s ease-out;
-	-moz-transition: opacity .4s ease-out;
-	-webkit-transition: opacity .4s ease-out;
-	-o-transition: opacity .4s ease-out;
+@media screen and (min-width: 720px) {	
+	.hover08 img {
+		-webkit-filter: grayscale(100%);
+		filter: grayscale(100%);
+		-webkit-transition: .3s ease-in-out;
+		transition: .3s ease-in-out;
+	}
+	.hover08:hover img {
+		-webkit-filter: grayscale(0);
+		filter: grayscale(0);
+	}
 }
 
+/* Lo dejo por si despues quiero poner el precio solo */
 .precio {
 	color: black;
 	font-size: 20px;
