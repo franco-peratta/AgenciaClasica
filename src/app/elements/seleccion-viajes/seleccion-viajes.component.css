@@ -1,19 +1,6 @@
-mat-card {
-	margin-bottom: 5vh;
-}
-
-img:hover {
-    cursor: pointer;
-}
-
 .destacados {
 	padding-left: 5vw;
 	padding-right: 5vw;
-}
-
-.precio {
-	color: black;
-	font-size: 24px;
 }
 
 #titulo {
@@ -23,12 +10,30 @@ img:hover {
 	margin-bottom: 60px;
 }
 
-mat-card{
+.card {
+	margin-bottom: 5vh;
 	cursor: pointer;
 }
 
 .card:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+	box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card:hover img {
+	opacity: 1;
+}
+
+img {
+	opacity: 0.85;
+	transition: opacity .4s ease-out;
+	-moz-transition: opacity .4s ease-out;
+	-webkit-transition: opacity .4s ease-out;
+	-o-transition: opacity .4s ease-out;
+}
+
+.precio {
+	color: black;
+	font-size: 20px;
 }
 
 #banner {
@@ -40,16 +45,17 @@ mat-card{
 	position: relative;
 	clear: both;
 	background: transparent center center no-repeat fixed;
-	background-image: url("/assets/media/newyork4.jpg");
+	background-image: url("/assets/media/newyork1.jpg");
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://wallpapercave.com/wp/wp2205954.jpg',sizingMethod='scale');
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://wallpapercave.com/wp/wp2205954.jpg', sizingMethod='scale');
 	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://wallpapercave.com/wp/wp2205954.jpg',sizingMethod='scale')";
 }
 
 /* Centered text */
+
 .centered {
 	position: absolute;
 	top: 50%;

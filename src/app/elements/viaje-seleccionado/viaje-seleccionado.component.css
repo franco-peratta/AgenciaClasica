@@ -21,7 +21,12 @@ p {
 
 #panel_detalles {
   background: #f3f1f1;
-  padding: 1vh 1vh 1vh 1vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
   overflow:hidden; 
 }
 
@@ -117,4 +122,8 @@ blockquote:before {
 
 ngb-carousel{
   outline: none;
+}
+
+.espaciado {
+  margin-bottom: 2vh;
 }

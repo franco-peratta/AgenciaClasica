@@ -7,10 +7,8 @@
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" *ngFor="let viaje of viajes; index as i;">
       <mat-card routerLink='programas/{{viaje.id}}' class="card mat-elevation-z8">
-
         <mat-card-title class="text-oneline">{{viaje.nombre}}</mat-card-title>
         <mat-card-subtitle>{{viaje.nombre}}</mat-card-subtitle>
-
         <img mat-card-image [src]=viaje.portada alt="Photo of Rome">
         <mat-card-content>
           <p class="precio">
