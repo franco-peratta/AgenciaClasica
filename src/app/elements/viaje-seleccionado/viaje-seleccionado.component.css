@@ -1,5 +1,6 @@
 .container-fluid {
   margin-top: 5vh;
+  margin-bottom: 10vh;
 }
 
 .inner {
@@ -126,4 +127,15 @@ ngb-carousel{
 
 .espaciado {
   margin-bottom: 2vh;
+}
+
+.dark-modal .modal-content {
+  background-color: #292b2c;
+  color: white;
+}
+.dark-modal .close {
+  color: white;
+}
+.light-blue-backdrop {
+  background-color: #5cb3fd;
 }
