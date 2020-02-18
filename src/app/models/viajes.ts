@@ -1,7 +1,6 @@
 export interface Viajes {
     nombre: string;
     destino: string;
-    portada: string;
     fotos: string[];
     video: string;
     duracion: string;
@@ -9,7 +8,7 @@ export interface Viajes {
     descripcion: string;
     observaciones: string;
     itinerario: string;
-    createdDate: Date;
-    lastModifiedDate: Date;
+    create_ts: Date;
+    update_ts: Date;
     destacado: boolean;
 }

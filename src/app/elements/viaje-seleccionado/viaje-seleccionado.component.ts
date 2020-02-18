@@ -65,10 +65,8 @@ export class ViajeSeleccionadoComponent implements OnInit {
         id: this.id,
         nombre: data.nombre,
         destino: data.destino,
-        portada: data.portada,
         fotos: data.fotos,
         video: data.video,
-        lastModifiedDate: data.lastModifiedDate.toDate(),
         duracion: data.duracion,
         precio: data.precio,
         descripcion: data.descripcion,
@@ -79,7 +77,6 @@ export class ViajeSeleccionadoComponent implements OnInit {
       this.viaje = viaje_obj;
 
       this.images = [];
-      this.images.push(viaje_obj.portada);
       for (let entry of viaje_obj.fotos) { //of me da el contenido dentro del indice (entry: fotos[i])
         this.images.push(entry);
       }
@@ -135,10 +132,8 @@ export class ViajeSeleccionadoComponent implements OnInit {
           id: id,
           nombre: data.nombre,
           destino: data.destino,
-          portada: data.portada,
           fotos: data.fotos,
           video: data.video,
-          lastModifiedDate: data.lastModifiedDate.toDate(),
           duracion: data.duracion,
           precio: data.precio,
           descripcion: data.descripcion,

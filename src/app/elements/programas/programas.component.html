@@ -2,17 +2,21 @@
     <h2 align="center">Programas diseñados para vos</h2>
     <form class="container" [formGroup]="filter" novalidate>
         <p>Búsqueda: </p>
-        <input type="text" class="form-control" formControlName="inputText" placeholder="Ingrese nombre del programa o el destino deseado">
+        <input type="text" class="form-control" formControlName="inputText"
+            placeholder="Ingrese nombre del programa o el destino deseado">
     </form>
-    <div class="container-fluid">
-        <div class="row full-height">
-            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" *ngFor="let viaje of viajes | search :filter.get('inputText').value">
-                <mat-card class="card mat-elevation-z8" routerLink='{{viaje.id}}'>
-                    <mat-card-title class="text-oneline">
-                        {{viaje.nombre}}
-                    </mat-card-title>
+
+    <div class="full-height">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4" *ngFor="let viaje of viajes; index as i;">
+                <mat-card routerLink='./{{viaje.id}}' class="card mat-elevation-z8">
+                    <mat-card-title class="text-oneline">{{viaje.nombre}}</mat-card-title>
                     <mat-card-subtitle>{{viaje.nombre}}</mat-card-subtitle>
-                    <img mat-card-image [src]=viaje.portada alt="">
+
+                    <div class="hover08">
+                        <img mat-card-image [src]=viaje.fotos[0] alt="Photo of Rome">
+                    </div>
+
                     <mat-card-content>
                         <p class="text-oneline">
                             <i class="fa fa-calendar"></i>
@@ -25,10 +29,12 @@
                             <b> Precio: </b> {{viaje.precio}}
                         </p>
                     </mat-card-content>
+
                     <mat-card-actions>
                     </mat-card-actions>
                 </mat-card>
             </div>
         </div>
     </div>
+
 </div>

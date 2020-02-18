@@ -2,7 +2,6 @@ export interface ViajesViewModel {
     id: string;
     nombre: string;
     destino: string;
-    portada: string;
     fotos: string[];
     video: string;
     duracion: string;
@@ -10,6 +9,5 @@ export interface ViajesViewModel {
     descripcion: string;
     observaciones: string;
     itinerario: string;
-    lastModifiedDate: Date;
     destacado: boolean;
 } 

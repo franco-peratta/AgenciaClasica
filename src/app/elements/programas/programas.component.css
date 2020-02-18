@@ -5,12 +5,17 @@
 
 .full-height {
   min-height: 60vh;
+  margin-top: 5vh;
 }
 
 .row {
-  margin-top: 5vh;
   padding-left: 5vw;
   padding-right: 5vw;
+}
+
+.card {
+  margin-bottom: 5vh;
+  cursor: pointer;
 }
 
 .card {
@@ -22,21 +27,23 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.card:hover img {
-  opacity: 1;
+/* Efecto Gray Scale */
+
+.hover08 {
+  margin-top: 2vh;
 }
 
-img {
-  opacity: 0.85;
-  transition: opacity .4s ease-out;
-  -moz-transition: opacity .4s ease-out;
-  -webkit-transition: opacity .4s ease-out;
-  -o-transition: opacity .4s ease-out;
-}
-
-.precio {
-  color: black;
-  font-size: 20px;
+@media screen and (min-width: 720px) {
+  .hover08 img {
+    -webkit-filter: grayscale(50%);
+    filter: grayscale(50%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+  }
+  .hover08:hover img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
+  }
 }
 
 .text-oneline {

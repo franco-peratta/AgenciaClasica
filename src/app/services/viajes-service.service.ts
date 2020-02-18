@@ -13,7 +13,8 @@ export class ViajesService {
   private ViajesCollectionName = 'viajes';
 
   getViajes(): Observable<firebase.firestore.QuerySnapshot> {
-    return this.db.collection<Viajes>(this.ViajesCollectionName, ref => ref.orderBy('lastModifiedDate', 'desc')).get();
+    // CAMBIAR nombre por update_ts
+    return this.db.collection<Viajes>(this.ViajesCollectionName, ref => ref.orderBy('nombre', 'desc')).get();
   }
   getViaje(id: string): Observable<firebase.firestore.DocumentSnapshot> {
     return this.db.collection<Viajes>(this.ViajesCollectionName).doc(id).get();

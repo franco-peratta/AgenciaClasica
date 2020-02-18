@@ -24,7 +24,7 @@ export class ProgramasComponent implements OnInit {
   }
 
   loadViajes() {
-    this.viajesService.getViajes().subscribe(response => {
+    this.viajesService.getViajes().subscribe(response => {      
       response.docs.forEach(value => {
         const data = value.data();
         const id = value.id;
@@ -32,10 +32,8 @@ export class ProgramasComponent implements OnInit {
           id: id,
           nombre: data.nombre,
           destino: data.destino,
-          portada: data.portada,
           fotos: data.fotos,
           video: data.video,
-          lastModifiedDate: data.lastModifiedDate.toDate(),
           duracion: data.duracion,
           precio: data.precio,
           descripcion: data.descripcion,

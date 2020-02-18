@@ -33,10 +33,10 @@ export class FormComponent implements OnInit {
       descripcion: ['', Validators.required],
       itinerario: ['', Validators.required],
       obs: ['', null],
-      portada: ['', Validators.required],
       foto1: ['', Validators.required],
       foto2: ['', Validators.required],
       foto3: ['', Validators.required],
+      foto4: ['', Validators.required],
       destacado: ['', null]
     });
 
@@ -54,15 +54,15 @@ export class FormComponent implements OnInit {
     galeria.push(this.formdb.value.foto1);
     galeria.push(this.formdb.value.foto2);
     galeria.push(this.formdb.value.foto3);
+    galeria.push(this.formdb.value.foto4);
 
     //Lo tengo que hacer manualmente porque si no le agrega a viaje los atributos
-    //foto 1 2 y 3 en vez del arreglo de fotos.
+    //foto 1 2 3 y 4 en vez del arreglo de fotos.
     //Ver si modificando el formulario puedo cambiar esto
     //para que funcione haciendo "let viaje: Viajes = this.formdb.value;"
     let viaje: Viajes = {
       nombre: this.formdb.value.nombre,
       destino: this.formdb.value.destino,
-      portada: this.formdb.value.portada,
       fotos: galeria,
       //video: this.formdb.value.video, HAY QUE AGREGARLO AL FORMULARIO
       video: "",
@@ -71,8 +71,8 @@ export class FormComponent implements OnInit {
       descripcion: this.formdb.value.descripcion,
       observaciones: this.formdb.value.obs,
       itinerario: this.formdb.value.itinerario,
-      createdDate: new Date(),
-      lastModifiedDate: new Date(),
+      create_ts: new Date(),
+      update_ts: new Date(),
       destacado: this.formdb.value.destacado,
     }
 
@@ -119,10 +119,8 @@ export class FormComponent implements OnInit {
           id: id,
           nombre: data.nombre,
           destino: data.destino,
-          portada: data.portada,
           fotos: data.fotos,
           video: data.video,
-          lastModifiedDate: data.lastModifiedDate.toDate(),
           duracion: data.duracion,
           precio: data.precio,
           descripcion: data.descripcion,
@@ -182,8 +180,10 @@ export class FormComponent implements OnInit {
   }
 
   cargarViajeAEditar() {
-    
+
     let viaje = this.viajes[(<HTMLInputElement>document.getElementById("select")).value];
+
+    console.log(viaje);
 
     //chequeo que no sea ni null ni undefined
     if (viaje != null) {
@@ -195,11 +195,10 @@ export class FormComponent implements OnInit {
 
       (<HTMLInputElement>document.getElementById("precio")).value = viaje.precio;
 
-      (<HTMLInputElement>document.getElementById("portada")).value = viaje.portada;
-
       (<HTMLInputElement>document.getElementById("destacado")).checked = viaje.destacado;
 
       (<HTMLInputElement>document.getElementById("edit_button")).disabled = false;
+
       (<HTMLInputElement>document.getElementById("delete_button")).disabled = false;
     }
   }
@@ -211,7 +210,6 @@ export class FormComponent implements OnInit {
     let viaje = {
       nombre: (<HTMLInputElement>document.getElementById("nombre")).value,
       destino: (<HTMLInputElement>document.getElementById("destino")).value,
-      portada: (<HTMLInputElement>document.getElementById("portada")).value,
       duracion: (<HTMLInputElement>document.getElementById("duracion")).value,
       precio: (<HTMLInputElement>document.getElementById("precio")).value,
       destacado: (<HTMLInputElement>document.getElementById("destacado")).checked,

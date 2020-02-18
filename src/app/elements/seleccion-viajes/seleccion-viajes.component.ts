@@ -27,10 +27,8 @@ export class SeleccionViajesComponent implements OnInit {
           id: id,
           nombre: data.nombre,
           destino: data.destino,
-          portada: data.portada,
           fotos: data.fotos,
           video: data.video,
-          lastModifiedDate: data.lastModifiedDate.toDate(),
           duracion: data.duracion,
           precio: data.precio,
           descripcion: data.descripcion,
@@ -41,5 +39,6 @@ export class SeleccionViajesComponent implements OnInit {
         this.viajes.push(viaje_obj);
       });
     });
+    console.log(this.viajes);
   }
 }
