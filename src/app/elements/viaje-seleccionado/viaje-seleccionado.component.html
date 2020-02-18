@@ -35,33 +35,9 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
                     <i class="fa fa-money"></i>
                     <b> Precio: </b> {{viaje.precio}}
                 </p>
-                <button type="button" class="btn btn-primary" (click)=toggle_form() id="btn-reserva">Reservar</button>
-            </div>
-
-            <br>
-            <div id="form_div" style="display: none">
-                <br>
-                <hr>
-                <br>
-                <form [formGroup]="form" (ngSubmit)="send_message()">
-                    <div class="form-group">
-                        Nombre y Apellido *
-                        <br>
-                        <input type="text" name="nombre" class="form-control" formControlName="nombre">
-                        <br> E-mail *
-                        <br>
-                        <input type="text" name="mail" class="form-control" formControlName="mail">
-                        <br> Mensaje y observaciones (opcional)
-                        <textarea id="mensaje" class="form-control" formControlName="mensaje" placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
-                        <br>
-                        <!--Captcha-->
-                        <!--https://www.npmjs.com/package/ng-recaptcha-->
-                        <re-captcha formControlName="recaptchaReactive" siteKey="6Lfp75YUAAAAADKD8ILWr9D-opHVYV8B3celWq0e"></re-captcha>
-                        <br>
-                        <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
-                    </div>
-                </form>
-                <hr>
+                <button type="button" class="btn btn-primary" id="btn-reserva" (click)="openScrollableContent(longContent)" data-target="#exampleModalCenter">
+                    Reservar
+                </button>
             </div>
 
             <div class="quote">
@@ -114,7 +90,7 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
             <hr>
             <!-- Más recientes-->
             <div class="card mb-3" *ngFor='let oferta of ofertas;'>
-                <div class="oferta row no-gutters" (click)='reloadWithDifferentId(oferta)'>                    
+                <div class="oferta row no-gutters" (click)='reloadWithDifferentId(oferta)'>
                     <div class="col-md-12">
                         <div class="card-body">
                             <h5 class="card-title">{{oferta.nombre}}</h5>
@@ -136,3 +112,38 @@ https://stackoverflow.com/questions/34833358/angular-2-typeerror-l-thing0-is-und
         </div>
     </div>
 </div>
+
+<!-- MODAL -->
+
+<ng-template #longContent let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Modal title</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div id="form_div">
+            <form [formGroup]="form" (ngSubmit)="send_message()">
+                <div class="form-group">
+                    Nombre y Apellido *
+                    <input type="text" name="nombre" class="form-control" formControlName="nombre">
+                    <br> E-mail *
+                    <br>
+                    <input type="text" name="mail" class="form-control" formControlName="mail">
+                    <br> Mensaje y observaciones (opcional)
+                    <textarea id="mensaje" class="form-control" formControlName="mensaje" placeholder="Puede indicar la cantidad de personas, o cualquier otro detalle que considere necesario"></textarea>
+                    <br>
+                    <!--Captcha-->
+                    <!--https://www.npmjs.com/package/ng-recaptcha-->
+                    <re-captcha formControlName="recaptchaReactive" siteKey="6Lfp75YUAAAAADKD8ILWr9D-opHVYV8B3celWq0e"></re-captcha>
+                    <br>
+                    <button class="btn btn-primary" [disabled]="form.invalid">Enviar mensaje</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+</ng-template>

@@ -6,6 +6,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Mensaje } from 'src/app/models/mensaje';
 import { MessagesService } from 'src/app/services/messages.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-viaje-seleccionado',
@@ -20,6 +21,7 @@ export class ViajeSeleccionadoComponent implements OnInit {
   id: string;
   viaje: ViajesViewModel;
   form: FormGroup;
+  modal: boolean = false;
 
   constructor(
     private viajesService: ViajesService,
@@ -27,9 +29,10 @@ export class ViajeSeleccionadoComponent implements OnInit {
     private config: NgbCarouselConfig,
     private formBuilder: FormBuilder,
     private mensajes_service: MessagesService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {
-    config.interval = 3000;
+    config.interval = 4000;
     config.wrap = true;
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
@@ -148,23 +151,11 @@ export class ViajeSeleccionadoComponent implements OnInit {
     });
   }
 
-  // Engaño al router para que refresque el componente en cada routerLink
-  // https://github.com/angular/angular/issues/13831
   reloadWithDifferentId(oferta) {
     this.router.navigate(['../../programas/' + oferta.id]);
     if (this.id !== oferta.id) {
       this.id = oferta.id;
       this.loadViaje();
-    }
-  }
-
-  toggle_form() {
-    if (document.getElementById("form_div").style.display === "none") {
-      document.getElementById('form_div').style.display = "block";
-      document.getElementById('btn_reserva').style.display = "none";
-    }
-    else {
-      document.getElementById('form_div').style.display = "none";
     }
   }
 
@@ -187,7 +178,6 @@ export class ViajeSeleccionadoComponent implements OnInit {
 
     //limpio los campos del formulario
     this.form.reset();
-    this.toggle_form();
   }
 
   shareFacebook() {
@@ -213,4 +203,8 @@ export class ViajeSeleccionadoComponent implements OnInit {
     let win = window.open(url, '_blank');
     win.focus();
   }*/
+
+  openScrollableContent(longContent) {
+    this.modalService.open(longContent);
+  }
 }
